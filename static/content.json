@@ -1,0 +1,25 @@
+{
+    "description":
+    "I am currently deeply engaged in the ever-evolving realm of back-end development and security. My educational journey has encompassed not only a thorough exploration of front-end development and foundational concepts in computer vision but also a dedicated focus on advancing my expertise in back-end technologies, with a particular emphasis on security considerations.\nIn my pursuit of excellence, I am actively refining my skills to create a robust and secure foundation for my professional endeavors. I remain committed to staying abreast of the latest developments in back-end development and security practices, ensuring that I am well-equipped to contribute effectively to the dynamic landscape of technology. My overarching goal is to build a comprehensive skill set that not only meets the demands of the present but also anticipates and adapts to the challenges of the future.",
+
+    "skills":[
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"
+    ],
+    "projects":[
+        {
+            "title":"",
+            "image":"",
+            "desc":"",
+            "link":""
+        }
+    ]
+}

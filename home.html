@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Samridh Anand</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+          
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+
+
+  <body>
+
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class = "item-wrapper">
+          <a class="buttons" href="#about">Home</a>
+          <a class="buttons" href="#skills">Skills/Projects</a>
+          <a class="buttons" href="#contact">Contact</a>
+        </div>
+
+      </nav>
+
+      <!-- INTRO -->
+        <div id="about" class="flex-container">
+          <div class="flex-box small">
+            <h1>
+              <span style="color: var(--secondary)">Hi, I am </span>
+              Samridh Anand
+            </h1>
+          </div>
+          <div class="flex-box big">
+            <h3 id="intro"><a style="text-decoration: underline;" target="_blank"  href='https://samridh3215.hashnode.dev/'>here</a>
+            </h3>
+          </div>
+        </div>
+
+      <!-- SKILLS and PROJECTS -->
+        <div id="skills" class="flex-container skills-box">
+          <div class="skill-flex-box big" id="skill-container">
+
+
+          </div>
+          <div class="flex-box small">
+            <h1>My Techstack</h1>
+          </div>
+
+        </div>
+        <div class="flex-container project-container">
+          <div class="flex-box" id="projects">
+            <h1>My Projects</h1>
+          </div>
+          <div class="flex-box projects">
+              <div class="project-card">
+                <h3>{{project.name}}</h3>
+                <p>{{project.description}}</p>
+                <button class="github"><a target="_blank" href="">Github</a></button>
+
+                
+              </div>
+ 
+
+          </div>
+        </div>
+
+
+      <!-- CONTACT -->
+        <div class="flex-container skills-box" id="contact">
+          <div class="form">
+            <a href="https://www.instagram.com/samridh3215/" target="_blank"><img class = 'skill-image' src="/static/images/instagram.png"></a>
+            <a href="https://www.linkedin.com/in/samridh-anand-985415241/" target="_blank"><img class = 'skill-image' src="/static/images/linkedin.png"></a>
+            <a href="mailto:samridhanand.2003@gmail.com" target="_blank"><img class = 'skill-image' src="/static/images/email.png"></a>
+          </div>
+          <h1>Contact me</h1>
+
+        </div>
+
+      <!-- FOOTER -->
+
+
+
+    <script src="/static/js/script.js" async defer></script>
+  </body>
+</html>
