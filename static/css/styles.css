@@ -126,10 +126,14 @@ body {
 .skills-box {
   flex-wrap: wrap-reverse;
 }
+
+.project-container{
+  justify-content: space-around;
+}
 .project-card{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center; 
   background: rgba(255,255,255,0.15);
   -webkit-backdrop-filter: blur(8px);
