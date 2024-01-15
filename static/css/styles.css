@@ -171,7 +171,10 @@ body {
 
 }
 #projects{
-  flex:1
+  flex:0.4
+}
+#projects-holder{
+  flex-wrap: wrap;
 }
 .small{
   flex: 2;

@@ -1,8 +1,6 @@
 {
-    "description":
-    "I am currently deeply engaged in the ever-evolving realm of back-end development and security. My educational journey has encompassed not only a thorough exploration of front-end development and foundational concepts in computer vision but also a dedicated focus on advancing my expertise in back-end technologies, with a particular emphasis on security considerations.\nIn my pursuit of excellence, I am actively refining my skills to create a robust and secure foundation for my professional endeavors. I remain committed to staying abreast of the latest developments in back-end development and security practices, ensuring that I am well-equipped to contribute effectively to the dynamic landscape of technology. My overarching goal is to build a comprehensive skill set that not only meets the demands of the present but also anticipates and adapts to the challenges of the future.",
-
-    "skills":[
+    "description": "I am currently deeply engaged in the ever-evolving realm of back-end development and security. My educational journey has encompassed not only a thorough exploration of front-end development and foundational concepts in computer vision but also a dedicated focus on advancing my expertise in back-end technologies, with a particular emphasis on security considerations.\nIn my pursuit of excellence, I am actively refining my skills to create a robust and secure foundation for my professional endeavors. I remain committed to staying abreast of the latest developments in back-end development and security practices, ensuring that I am well-equipped to contribute effectively to the dynamic landscape of technology. My overarching goal is to build a comprehensive skill set that not only meets the demands of the present but also anticipates and adapts to the challenges of the future.",
+    "skills": [
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg",
@@ -14,12 +12,20 @@
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"
     ],
-    "projects":[
+    "projects": [
         {
-            "title":"Distress Detector",
-            "image":"",
-            "desc":"A software that actively listens in the background for 'trigger' words and activats the camera to analyse what is going on in the scene. The alert system used Discord and its API",
-            "link":"https://github.com/samridh3215/Distress-detection"
+            "title": "Distress Detector",
+            "image": "",
+            "desc": "A software that actively listens in the background for 'trigger' words and activates the camera to analyse what is going on in the scene. The alert system used Discord and its API",
+            "link": "https://github.com/samridh3215/Distress-detection",
+            "keywords":["NLP", "Computer Vision", "Object detection with YOLO"]
+        },
+        {
+            "title": "E-Library Management System",
+            "image": "",
+            "desc": "A simple and easy to use web application built whihc can be used by students and librarians. The student can request and view books available for borrowing/renting. The admin can approve/reject the request and also keep track of dues. In addition to all this the student can also view any digital resources which is uploaded by the librarian",
+            "link":"https://github.com/samridh3215/E-Library-Management-System",
+            "keywords": ["EJS", "MySQL", "Express js", "Node js"]
         }
     ]
 }
