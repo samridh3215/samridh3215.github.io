@@ -1,0 +1,54 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: samridh3215
+theme: ["PaperMod"]
+params:
+  hideFooter: true
+  profileMode:
+    enabled: true
+    title: "Hi there 👋, I am Samridh Anand" # optional default will be site title
+    subtitle: "4th year CSE student @ PESU ECC | Cybersecurity enthusiast | Full-stack developer "
+    imageUrl: "https://arweave.net/0z_KWfW9qzl-WfpIFJ_cCJgPXVcAA6ByXczDp8u1a3E" # optional
+    imageTitle: "My image " # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: About
+        url: "/about"
+      - name: Techstack
+        url: "/techstack"
+      - name: Projects
+        url: "/projects"
+      - name: View Resume
+        url: "https://rxresu.me/samridh3215/samridh-resume"
+
+
+  socialIcons: # optional
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/samridh-anand-985415241/"
+    - name: "Github"
+      url: "https://github.com/samridh3215"
+    - name: ""
+menu:
+  main:
+    - identifier: about 
+      name: About
+      url: /about/
+      weight: 10
+
+    - identifier: techstack 
+      name: Techstack
+      url: /techstack/
+      weight: 10
+    - identifier: projects 
+      name: Projects
+      url: /projects/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 30
