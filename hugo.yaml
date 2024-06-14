@@ -7,7 +7,7 @@ params:
   profileMode:
     enabled: true
     title: "Hi there 👋, I am Samridh Anand" # optional default will be site title
-    subtitle: "4th year CSE student @ PESU ECC | Cybersecurity enthusiast | Full-stack developer "
+    subtitle: "4th year CSE student @ PESU ECC | Cybersecurity Enthusiast | Full-stack Developer "
     imageUrl: "https://arweave.net/0z_KWfW9qzl-WfpIFJ_cCJgPXVcAA6ByXczDp8u1a3E" # optional
     imageTitle: "My image " # optional
     imageWidth: 120 # custom size
@@ -28,7 +28,8 @@ params:
       url: "https://www.linkedin.com/in/samridh-anand-985415241/"
     - name: "Github"
       url: "https://github.com/samridh3215"
-    - name: ""
+    - name: "Gmail"
+      url: "mailto:samridhanand.2003@gmail.com"
 menu:
   main:
     - identifier: about 
