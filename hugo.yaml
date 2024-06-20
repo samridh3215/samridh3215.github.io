@@ -8,7 +8,7 @@ params:
     enabled: true
     title: "Hi there 👋, I am Samridh Anand" # optional default will be site title
     subtitle: "4th year CSE student @ PESU ECC | Cybersecurity Enthusiast | Full-stack Developer "
-    imageUrl: "https://arweave.net/0z_KWfW9qzl-WfpIFJ_cCJgPXVcAA6ByXczDp8u1a3E" # optional
+    # imageUrl: "https://arweave.net/0z_KWfW9qzl-WfpIFJ_cCJgPXVcAA6ByXczDp8u1a3E" 
     imageTitle: "My image " # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size

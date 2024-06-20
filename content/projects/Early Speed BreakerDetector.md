@@ -6,7 +6,7 @@ ShowToc: true
 ---
 ## Problem Statement
 
-Every day, on an average 9 deaths are reported that are caused due to speed breakers and potholes. This could be because of poor visibility or the driver may not be paying attention while driving/riding
+Every day, on an average 9 deaths are reported, which are caused due to speed breakers and potholes. Reasons for this could be poor visibility or the driver not paying attention while driving/riding
 
 ## Solution
 This project aims to reduce road accidents caused by speed breakers and potholes, by alerting the driver in advance about an incoming speed breaker or pothole and in the process also create a database of all existing speed breakers
