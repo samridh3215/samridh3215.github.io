@@ -8,7 +8,7 @@ I am a B.E undergraduate student pursuing __Computer Science__ 🖥️ at PES Un
 
 I am always actively looking out for opportunities to learn and improve my skillset. Through out my academic journey, I have explored a lot of fields in computer science, for example, computer vision, web development, native android development, machine learning and AI, and even cybersecurity.
 
-After careful considerations and exloration, I have decided to embark my career in cybersecurity.
+
 
 ### Currently
 - Exploring penetration testing and red teaming.

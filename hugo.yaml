@@ -1,4 +1,4 @@
-baseURL: https://example.org/
+baseURLL: /about/
 languageCode: en-us
 title: samridh3215
 theme: ["PaperMod"]
@@ -45,10 +45,10 @@ menu:
       name: Projects
       url: /projects/
       weight: 10
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 20
+    # - identifier: tags
+    #   name: Tags
+    #   url: /tags/
+    #   weight: 20
     - identifier: blog
       name: Blog
       url: /blog/
