@@ -1,4 +1,4 @@
-I am a B.E undergraduate student pursuing __Computer Science__ 🖥️ at PES University.
+B.E undergraduate student pursuing __Computer Science__ 🖥️ at PES University.
 
 ### Fast forward to
 
@@ -6,11 +6,8 @@ I am a B.E undergraduate student pursuing __Computer Science__ 🖥️ at PES Un
 - [My projects](/projects)
 
 
-I am always actively looking out for opportunities to learn and improve my skillset. Through out my academic journey, I have explored a lot of fields in computer science, for example, computer vision, web development, native android development, machine learning and AI, and even cybersecurity.
-
-
 
 ### Currently
-- Exploring penetration testing and red teaming.
-- Working on a project to facilitate [source code vulnerability detection and remediation](/projects/vulnerability-detection-and-remidiation-in-source-code/).
-- Improvising on my problem solving skills.
+1. Exploring penetration testing and red teaming.
+2. Working on a project to facilitate [source code vulnerability detection and remediation](/projects/vulnerability-detection-and-remidiation-in-source-code/).
+3. Improvising on my problem solving skills.
