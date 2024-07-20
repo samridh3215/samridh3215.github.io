@@ -8,7 +8,7 @@ params:
   profileMode:
     enabled: true
     title: "Hi there 👋, I am Samridh Anand" # optional default will be site title
-    subtitle: "### 4th year CSE student @ PESU ECC | Cybersecurity Enthusiast | Full-stack Developer.\n---\n I am always actively looking out for opportunities to learn and improve my skillset. Through out my academic journey, I have explored a lot of fields in computer science, for example, computer vision, web development, native android development, machine learning and AI, and even cybersecurity.\n "
+    subtitle: "### 4th year CSE student @ PESU ECC | Cybersecurity Enthusiast | Full-stack Developer.\n---\n I am always actively looking out for opportunities to learn and improve my skillset. Through out my academic journey, I have explored a lot of fields in computer science, for example, computer vision, web development, native android development, machine learning and AI, and even cybersecurity. I am super excited to learn and work with new technologies and always willing to adapt myself to changing circumstances.\n "
     # imageUrl: "https://arweave.net/0z_KWfW9qzl-WfpIFJ_cCJgPXVcAA6ByXczDp8u1a3E" 
     imageTitle: "My image " # optional
     imageWidth: 120 # custom size
@@ -42,7 +42,7 @@ menu:
       name: Techstack
       url: /techstack/
       weight: 10
-    - identifier: projects 
+    - identifier: projects
       name: Projects
       url: /projects/
       weight: 10
