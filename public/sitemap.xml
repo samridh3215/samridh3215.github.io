@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>//localhost:1313/projects/early-speed-breakerdetector/</loc>
+  </url><url>
+    <loc>//localhost:1313/projects/fin-pay/</loc>
+  </url><url>
+    <loc>//localhost:1313/projects/vulnerability-detection-and-repair-in-source-code/</loc>
+  </url><url>
+    <loc>//localhost:1313/projects/gosniff/</loc>
+  </url><url>
+    <loc>//localhost:1313/projects/mock-stock-app/</loc>
+  </url><url>
+    <loc>//localhost:1313/projects/online-portal-for-university-students/</loc>
+  </url><url>
+    <loc>//localhost:1313/about/</loc>
+  </url><url>
+    <loc>//localhost:1313/techstack/</loc>
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+  </url><url>
+    <loc>//localhost:1313/projects/food-supply-chain/</loc>
+  </url><url>
+    <loc>//localhost:1313/blog/</loc>
+  </url><url>
+    <loc>//localhost:1313/projects/</loc>
+  </url><url>
+    <loc>//localhost:1313/</loc>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+  </url>
+</urlset>
