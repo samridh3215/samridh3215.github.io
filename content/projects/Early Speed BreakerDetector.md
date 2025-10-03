@@ -1,33 +1,52 @@
 ---
 title: "Early Speed Breaker Detection" 
-summary: Aims to reduce road accidents caused by speed breakers and potholes, by alerting the driver in advance about an incoming speed breaker and in the process also create a database of all existing speed breakers
+summary: A crowdsourced IoT solution to reduce road accidents by providing advance warnings about speed breakers and potholes while creating a comprehensive database of road hazards
 ShowToc: true
 weight: 1
 ---
 
 ## Problem Statement
 
-Every day, on an average 9 deaths are reported, which are caused due to speed breakers and potholes. Reasons for this could be poor visibility or the driver not paying attention while driving/riding
+Road accidents caused by speed breakers and potholes result in an average of 9 fatalities daily. Contributing factors include poor visibility, inadequate signage, and driver inattention. This project addresses these safety concerns through proactive detection and driver notification.
 
 ## Solution
 
-This project aims to reduce road accidents caused by speed breakers and potholes, by alerting the driver in advance about an incoming speed breaker or pothole and in the process also create a database of all existing speed breakers
+This system reduces road accidents by alerting drivers in advance about upcoming speed breakers and potholes while simultaneously creating a comprehensive, crowdsourced database of road hazards.
 
-## Steps taken to achieve the desired solution
+## Implementation Approach
 
-1. Get the location of all existing speed breakers
-   - We use people's phone and the sensor and geolocation data from the device to determine the presence of speed breakers
-2. Train a ML model to classify whether the data received from accelorometer of smart phones and devices belongs to speed breaker, potholes or is just an arbitary sensor value 
-   - Create a new dataset as we don't have access to any existing dataset online
-3. For a given geo-location (lat, long), atleast N devices shall also agree upon the presence of speed breaker at (lat, long)  
-4. Eventually over the time as people drive around, we collect data and plot out all the speed breaker locations.
-   - This approach helps us adapt to dynamic road conditions, especially in India
-5. Once, we have the geolocation of all speed breakers we can notify anyone who is approaching that geolocation (will require user to connect to our service)
+1. **Crowdsourced Data Collection**
+   - Leverage smartphone sensors and geolocation data to identify speed breaker locations
+   - Utilize accelerometer data from users' devices to detect road anomalies in real-time
 
-## Tech used
+2. **Machine Learning Classification**
+   - Train an RNN model using TensorFlow to classify accelerometer data as speed breakers, potholes, or normal road conditions
+   - Develop a custom dataset for training due to the absence of publicly available datasets
 
-- Django web framework, for backend 
-- A simple html page with JS functions to handle sending and receiving of data
-- Tensorflow, to train RNN model to classify the sensor data into speed breakers or arbitary reading 
+3. **Consensus-Based Validation**
+   - Require agreement from multiple devices (N) at a given geolocation (latitude, longitude) to confirm the presence of a speed breaker
+   - This approach minimizes false positives and ensures data reliability
 
-[Github link](https://github.com/samridh3215/Early-Speed-Breaker-Detection/tree/main)
+4. **Dynamic Database Creation**
+   - Continuously collect and aggregate data as users drive, mapping all speed breaker locations
+   - Adapt to changing road conditions, particularly relevant in regions with dynamic infrastructure
+
+5. **Real-Time Notification System**
+   - Alert users approaching validated speed breaker locations
+   - Provide sufficient advance warning for drivers to adjust speed accordingly
+
+## Technology Stack
+
+- **Backend**: Django web framework
+- **Frontend**: HTML with JavaScript for data transmission and visualization
+- **Machine Learning**: TensorFlow for training RNN model to classify sensor data
+- **Database**: Geospatial database for storing location data
+
+## Key Features
+
+- Crowdsourced data collection for comprehensive coverage
+- Machine learning-based classification for accuracy
+- Real-time driver alerts for improved safety
+- Dynamic adaptation to changing road conditions
+
+[GitHub Repository](https://github.com/samridh3215/Early-Speed-Breaker-Detection/tree/main)
