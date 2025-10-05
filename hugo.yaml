@@ -16,8 +16,8 @@ params:
     buttons:
       - name: About
         url: "/about"
-      - name: Techstack
-        url: "/techstack"
+      # - name: Techstack
+      #   url: "/techstack"
       - name: Projects
         url: "/projects"
       - name: View Resume
