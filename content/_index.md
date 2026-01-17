@@ -1,3 +1,11 @@
+---
+title: "About Me"
+hidemeta: true
+disableShare: true
+---
+
+# About Me
+
 Software Engineer with **1+ years of experience** working in Quality Engineering (QE), ensuring software meets release standards and reliability requirements. My work involves testing distributed systems at scale and building automation tools. Graduated with a B.E. in **Computer Science** with specialization in **Computer Networks and Security** from PES University (2025).
 
 

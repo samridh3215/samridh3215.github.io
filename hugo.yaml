@@ -1,56 +1,64 @@
 baseURL: /
 languageCode: en-us
-title: samridh3215
-theme: ["PaperMod"]
+title: Samridh Anand
+theme: minimal-black
+
 params:
+  brand: Samridh Anand
+  favicon: favicon.svg # Make sure to add one or remove this if not needed
 
-  hideFooter: true
-  profileMode:
-    enabled: true
-    title: "Hi there 👋, I am Samridh Anand" # optional default will be site title
-    subtitle: "### 4th year CSE student @ PESU ECC | Cybersecurity Enthusiast | Full-stack Developer.\n---\n I am always actively looking out for opportunities to learn and improve my skillset. Through out my academic journey, I have explored a lot of fields in computer science, for example, computer vision, web development, native android development, machine learning and AI, and even cybersecurity. I am super excited to learn and work with new technologies and always willing to adapt myself to changing circumstances.\n "
-    # imageUrl: "https://arweave.net/0z_KWfW9qzl-WfpIFJ_cCJgPXVcAA6ByXczDp8u1a3E" 
-    imageTitle: "My image " # optional
-    imageWidth: 120 # custom size
-    imageHeight: 120 # custom size
-    buttons:
-      - name: About
-        url: "/about"
-      # - name: Techstack
-      #   url: "/techstack"
-      - name: Projects
-        url: "/projects"
-      - name: View Resume
-        url: "https://rxresu.me/samridh3215/samridh-resume"
+  theme:
+    defaultTheme: dark
 
+  hero:
+    badge: Software Engineer
+    title: Hi, I'm Samridh Anand.
+    role: "AI & Distributed Systems Enthusiast | Automation Lover | Security-Aware Developer"
+    summary: "I am a software engineer with 1+ years of experience, focusing on building scalable AI-powered applications and distributed systems. My professional journey has deepened my understanding of distributed databases, while my passion for automation drives me to optimize workflows. I also maintain a keen interest in cybersecurity."
+    location: Bangalore, India
+    
+    primary:
+      label: View Projects
+      href: /projects/
+    
+    secondary:
+      label: Contact Me
+      href: mailto:samridhanand.2003@gmail.com
 
-  socialIcons: # optional
-    - name: "LinkedIn"
-      url: "https://www.linkedin.com/in/samridh-anand-985415241/"
-    - name: "Github"
-      url: "https://github.com/samridh3215"
-    - name: "Gmail"
-      url: "mailto:samridhanand.2003@gmail.com"
+  social:
+    - label: LinkedIn
+      url: https://www.linkedin.com/in/samridh-anand-985415241/
+      icon: fa-brands fa-linkedin-in
+    - label: GitHub
+      url: https://github.com/samridh3215
+      icon: fa-brands fa-github
+    - label: Gmail
+      url: mailto:samridhanand.2003@gmail.com
+      icon: fa-solid fa-envelope
+
 menu:
   main:
-    - identifier: about 
-      name: About
+    - name: Home
+      url: /
+      weight: 1
+    - name: About
       url: /about/
-      weight: 10
-
-    - identifier: techstack 
-      name: Techstack
+      weight: 2
+    - name: Technologies
       url: /techstack/
-      weight: 10
-    - identifier: projects
-      name: Projects
+      weight: 3
+    - name: Projects
       url: /projects/
-      weight: 10
-    # - identifier: tags
-    #   name: Tags
-    #   url: /tags/
-    #   weight: 20
-    - identifier: blog
-      name: Blog
+      weight: 4
+    - name: Blog
       url: /blog/
-      weight: 30
+      weight: 5
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    style: monokai
+  goldmark:
+    renderer:
+      unsafe: true

@@ -14,6 +14,36 @@
   </url><url>
     <loc>//localhost:1313/projects/online-portal-for-university-students/</loc>
   </url><url>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/api/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/best-practices/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/developing-secure-apis/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/security/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/apache/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/creating-https-connection/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/ssl/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/about/</loc>
   </url><url>
     <loc>//localhost:1313/techstack/</loc>
@@ -22,12 +52,6 @@
   </url><url>
     <loc>//localhost:1313/projects/food-supply-chain/</loc>
   </url><url>
-    <loc>//localhost:1313/blog/</loc>
-  </url><url>
     <loc>//localhost:1313/projects/</loc>
-  </url><url>
-    <loc>//localhost:1313/</loc>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
   </url>
 </urlset>

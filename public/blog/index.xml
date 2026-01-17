@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technical Articles on Samridh Anand</title>
+    <link>//localhost:1313/blog/</link>
+    <description>Recent content in Technical Articles on Samridh Anand</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guide to Developing Secure APIs</title>
+      <link>//localhost:1313/blog/developing-secure-apis/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/blog/developing-secure-apis/</guid>
+      <description>Best practices and methodologies for developing secure and robust APIs.</description>
+    </item>
+    <item>
+      <title>Creating an HTTPS Connection with an SSL Certificate</title>
+      <link>//localhost:1313/blog/creating-https-connection/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/blog/creating-https-connection/</guid>
+      <description>An in-depth guide on implementing HTTPS connections with SSL certificates for Apache servers.</description>
+    </item>
+  </channel>
+</rss>

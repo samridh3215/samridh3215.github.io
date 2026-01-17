@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on samridh3215</title>
+    <title>Projects on Samridh Anand</title>
     <link>//localhost:1313/projects/</link>
-    <description>Recent content in Projects on samridh3215</description>
+    <description>Recent content in Projects on Samridh Anand</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="//localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
@@ -12,49 +12,49 @@
       <link>//localhost:1313/projects/early-speed-breakerdetector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/early-speed-breakerdetector/</guid>
-      <description>Aims to reduce road accidents caused by speed breakers and potholes, by alerting the driver in advance about an incoming speed breaker and in the process also create a database of all existing speed breakers</description>
+      <description>A crowdsourced IoT solution to reduce road accidents by providing advance warnings about speed breakers and potholes while creating a comprehensive database of road hazards</description>
     </item>
     <item>
       <title>Pay via Fingerprint</title>
       <link>//localhost:1313/projects/fin-pay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/fin-pay/</guid>
-      <description>This project was done as a part of the course Microprocessors and computer architecture (UE21CS251B). It aims to facilitate payments in campus via sudent&amp;rsquo;s fingerpints</description>
+      <description>A biometric payment system for campus transactions using fingerprint authentication, developed as part of the Microprocessors and Computer Architecture course (UE21CS251B)</description>
     </item>
     <item>
-      <title>Vulnerability Detection and Remidiation in Source Code</title>
+      <title>A Multi-Agent RAG Framework for Automated Source Code Vulnerability Detection and Repair</title>
       <link>//localhost:1313/projects/vulnerability-detection-and-repair-in-source-code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/vulnerability-detection-and-repair-in-source-code/</guid>
-      <description>This project aims to perform static code analysis on source code to detect presence of vulnerability and provide fix for it by making use of multilpe LLMs</description>
+      <description>A novel AI-powered system leveraging multiple LLM agents and Retrieval Augmented Generation for comprehensive vulnerability detection and automated repair in source code</description>
     </item>
     <item>
       <title>GOSniff</title>
       <link>//localhost:1313/projects/gosniff/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/gosniff/</guid>
-      <description>A simple packet sniffer written in GO</description>
+      <description>A network packet analyzer written in Go with real-time web-based visualization</description>
     </item>
     <item>
-      <title>Mock Stock App</title>
+      <title>Mock Stock Trading Application</title>
       <link>//localhost:1313/projects/mock-stock-app/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/mock-stock-app/</guid>
-      <description>An attempt to create a simulation of stock market</description>
+      <description>A stock market simulation platform using historical data and virtual currency for risk-free trading practice</description>
     </item>
     <item>
-      <title>Online Portal for University Student</title>
+      <title>Online Portal for University Students</title>
       <link>//localhost:1313/projects/online-portal-for-university-students/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/online-portal-for-university-students/</guid>
-      <description>This project focused more on getting hands on experience with processes that take place while developing a software</description>
+      <description>A comprehensive university portal system developed using software engineering best practices and collaborative development methodologies</description>
     </item>
     <item>
       <title>Food Supply Chain</title>
       <link>//localhost:1313/projects/food-supply-chain/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/food-supply-chain/</guid>
-      <description>Blockchain project targetting the food industry supply chain, making it easier and more transparent by decentralising the process</description>
+      <description>A blockchain-based solution for the food industry supply chain, enhancing transparency and traceability through decentralization</description>
     </item>
   </channel>
 </rss>

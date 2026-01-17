@@ -18,6 +18,10 @@
 
 ![Database](https://skillicons.dev/icons?i=mysql,mongodb&perline=6)
 
+### Automation & AI
+
+![Automation & AI](https://skillicons.dev/icons?i=python,pytorch,tensorflow,selenium,bash&perline=6)
+
 ### Others
 
 ![Others](https://skillicons.dev/icons?i=raspberrypi,linux,html,css,jquery,md,&perline=10)

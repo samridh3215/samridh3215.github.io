@@ -1,81 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>samridh3215</title>
+    <title>About Me on Samridh Anand</title>
     <link>//localhost:1313/</link>
-    <description>Recent content on samridh3215</description>
+    <description>Recent content in About Me on Samridh Anand</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 01 Feb 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Early Speed Breaker Detection</title>
       <link>//localhost:1313/projects/early-speed-breakerdetector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/early-speed-breakerdetector/</guid>
-      <description>Aims to reduce road accidents caused by speed breakers and potholes, by alerting the driver in advance about an incoming speed breaker and in the process also create a database of all existing speed breakers</description>
+      <description>A crowdsourced IoT solution to reduce road accidents by providing advance warnings about speed breakers and potholes while creating a comprehensive database of road hazards</description>
     </item>
     <item>
       <title>Pay via Fingerprint</title>
       <link>//localhost:1313/projects/fin-pay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/fin-pay/</guid>
-      <description>This project was done as a part of the course Microprocessors and computer architecture (UE21CS251B). It aims to facilitate payments in campus via sudent&amp;rsquo;s fingerpints</description>
+      <description>A biometric payment system for campus transactions using fingerprint authentication, developed as part of the Microprocessors and Computer Architecture course (UE21CS251B)</description>
     </item>
     <item>
-      <title>Vulnerability Detection and Remidiation in Source Code</title>
+      <title>A Multi-Agent RAG Framework for Automated Source Code Vulnerability Detection and Repair</title>
       <link>//localhost:1313/projects/vulnerability-detection-and-repair-in-source-code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/vulnerability-detection-and-repair-in-source-code/</guid>
-      <description>This project aims to perform static code analysis on source code to detect presence of vulnerability and provide fix for it by making use of multilpe LLMs</description>
+      <description>A novel AI-powered system leveraging multiple LLM agents and Retrieval Augmented Generation for comprehensive vulnerability detection and automated repair in source code</description>
     </item>
     <item>
       <title>GOSniff</title>
       <link>//localhost:1313/projects/gosniff/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/gosniff/</guid>
-      <description>A simple packet sniffer written in GO</description>
+      <description>A network packet analyzer written in Go with real-time web-based visualization</description>
     </item>
     <item>
-      <title>Mock Stock App</title>
+      <title>Mock Stock Trading Application</title>
       <link>//localhost:1313/projects/mock-stock-app/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/mock-stock-app/</guid>
-      <description>An attempt to create a simulation of stock market</description>
+      <description>A stock market simulation platform using historical data and virtual currency for risk-free trading practice</description>
     </item>
     <item>
-      <title>Online Portal for University Student</title>
+      <title>Online Portal for University Students</title>
       <link>//localhost:1313/projects/online-portal-for-university-students/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/online-portal-for-university-students/</guid>
-      <description>This project focused more on getting hands on experience with processes that take place while developing a software</description>
+      <description>A comprehensive university portal system developed using software engineering best practices and collaborative development methodologies</description>
+    </item>
+    <item>
+      <title>Guide to Developing Secure APIs</title>
+      <link>//localhost:1313/blog/developing-secure-apis/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/blog/developing-secure-apis/</guid>
+      <description>Best practices and methodologies for developing secure and robust APIs.</description>
+    </item>
+    <item>
+      <title>Creating an HTTPS Connection with an SSL Certificate</title>
+      <link>//localhost:1313/blog/creating-https-connection/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/blog/creating-https-connection/</guid>
+      <description>An in-depth guide on implementing HTTPS connections with SSL certificates for Apache servers.</description>
     </item>
     <item>
       <title></title>
       <link>//localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/about/</guid>
-      <description>&lt;p&gt;B.E undergraduate student pursuing &lt;strong&gt;Computer Science&lt;/strong&gt; 🖥️ at PES University.&lt;/p&gt;&#xA;&lt;h3 id=&#34;fast-forward-to&#34;&gt;Fast forward to&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;//localhost:1313/techstack&#34;&gt;My techstack&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;//localhost:1313/projects&#34;&gt;My projects&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;currently&#34;&gt;Currently&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Exploring penetration testing and red teaming.&lt;/li&gt;&#xA;&lt;li&gt;Working on a project to facilitate &lt;a href=&#34;//localhost:1313/projects/vulnerability-detection-and-remidiation-in-source-code/&#34;&gt;source code vulnerability detection and remediation&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Improvising on my problem solving skills.&lt;/li&gt;&#xA;&lt;li&gt;Video editing.&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+      <description>&lt;p&gt;Software Engineer with &lt;strong&gt;1+ years of experience&lt;/strong&gt; working in Quality Engineering (QE), ensuring software meets release standards and reliability requirements. My work involves testing distributed systems at scale and building automation tools. Graduated with a B.E. in &lt;strong&gt;Computer Science&lt;/strong&gt; with specialization in &lt;strong&gt;Computer Networks and Security&lt;/strong&gt; from PES University (2025).&lt;/p&gt;&#xA;&lt;h3 id=&#34;professional-focus&#34;&gt;&#xA;  &lt;a href=&#34;#professional-focus&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    Professional Focus&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Currently working on quality assurance and release engineering for distributed database systems at Couchbase, with responsibilities including:&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
       <link>//localhost:1313/techstack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/techstack/</guid>
-      <description>&lt;h3 id=&#34;devops&#34;&gt;DevOps&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://skillicons.dev/icons?i=aws,docker,kubernetes,git,jenkins&amp;amp;perline=6&#34; alt=&#34;My Skills&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;programming-languages&#34;&gt;Programming Languages&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://skillicons.dev/icons?i=python,javascript,go,java,c&amp;amp;perline=6&#34; alt=&#34;Languages&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;frameworks-and-libraries&#34;&gt;Frameworks and libraries&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://skillicons.dev/icons?i=django,flask,react,npm,nodejs,express,pytorch&amp;amp;perline=10&#34; alt=&#34;Frameworks&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;security&#34;&gt;Security&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://skillicons.dev/icons?i=kali&amp;amp;perline=6&#34; alt=&#34;Security&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;databases&#34;&gt;Databases&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://skillicons.dev/icons?i=mysql,mongodb&amp;amp;perline=6&#34; alt=&#34;Database&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;others&#34;&gt;Others&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://skillicons.dev/icons?i=raspberrypi,linux,html,css,jquery,md,&amp;amp;perline=10&#34; alt=&#34;Others&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;devops&#34;&gt;&#xA;  &lt;a href=&#34;#devops&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    DevOps&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;md-image&#34;&gt;&#xA;  &lt;a href=&#34;https://skillicons.dev/icons?i=aws,docker,kubernetes,git,jenkins&amp;amp;perline=6&#34; class=&#34;glightbox&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;https://skillicons.dev/icons?i=aws,docker,kubernetes,git,jenkins&amp;amp;perline=6&#34;&#xA;      alt=&#34;My Skills&#34;&#xA;      loading=&#34;lazy&#34;&#xA;    /&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;programming-languages&#34;&gt;&#xA;  &lt;a href=&#34;#programming-languages&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    Programming Languages&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;md-image&#34;&gt;&#xA;  &lt;a href=&#34;https://skillicons.dev/icons?i=python,javascript,go,java,c&amp;amp;perline=6&#34; class=&#34;glightbox&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;https://skillicons.dev/icons?i=python,javascript,go,java,c&amp;amp;perline=6&#34;&#xA;      alt=&#34;Languages&#34;&#xA;      loading=&#34;lazy&#34;&#xA;    /&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;frameworks-and-libraries&#34;&gt;&#xA;  &lt;a href=&#34;#frameworks-and-libraries&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    Frameworks and libraries&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;md-image&#34;&gt;&#xA;  &lt;a href=&#34;https://skillicons.dev/icons?i=django,flask,react,npm,nodejs,express,pytorch&amp;amp;perline=10&#34; class=&#34;glightbox&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;https://skillicons.dev/icons?i=django,flask,react,npm,nodejs,express,pytorch&amp;amp;perline=10&#34;&#xA;      alt=&#34;Frameworks&#34;&#xA;      loading=&#34;lazy&#34;&#xA;    /&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;security&#34;&gt;&#xA;  &lt;a href=&#34;#security&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    Security&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;md-image&#34;&gt;&#xA;  &lt;a href=&#34;https://skillicons.dev/icons?i=kali&amp;amp;perline=6&#34; class=&#34;glightbox&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;https://skillicons.dev/icons?i=kali&amp;amp;perline=6&#34;&#xA;      alt=&#34;Security&#34;&#xA;      loading=&#34;lazy&#34;&#xA;    /&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;databases&#34;&gt;&#xA;  &lt;a href=&#34;#databases&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    Databases&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;md-image&#34;&gt;&#xA;  &lt;a href=&#34;https://skillicons.dev/icons?i=mysql,mongodb&amp;amp;perline=6&#34; class=&#34;glightbox&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;https://skillicons.dev/icons?i=mysql,mongodb&amp;amp;perline=6&#34;&#xA;      alt=&#34;Database&#34;&#xA;      loading=&#34;lazy&#34;&#xA;    /&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;automation--ai&#34;&gt;&#xA;  &lt;a href=&#34;#automation--ai&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    Automation &amp;amp; AI&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;md-image&#34;&gt;&#xA;  &lt;a href=&#34;https://skillicons.dev/icons?i=python,pytorch,tensorflow,selenium,bash&amp;amp;perline=6&#34; class=&#34;glightbox&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;https://skillicons.dev/icons?i=python,pytorch,tensorflow,selenium,bash&amp;amp;perline=6&#34;&#xA;      alt=&#34;Automation &amp;amp; AI&#34;&#xA;      loading=&#34;lazy&#34;&#xA;    /&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;others&#34;&gt;&#xA;  &lt;a href=&#34;#others&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    Others&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;md-image&#34;&gt;&#xA;  &lt;a href=&#34;https://skillicons.dev/icons?i=raspberrypi,linux,html,css,jquery,md,&amp;amp;perline=10&#34; class=&#34;glightbox&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;https://skillicons.dev/icons?i=raspberrypi,linux,html,css,jquery,md,&amp;amp;perline=10&#34;&#xA;      alt=&#34;Others&#34;&#xA;      loading=&#34;lazy&#34;&#xA;    /&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Food Supply Chain</title>
       <link>//localhost:1313/projects/food-supply-chain/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/projects/food-supply-chain/</guid>
-      <description>Blockchain project targetting the food industry supply chain, making it easier and more transparent by decentralising the process</description>
-    </item>
-    <item>
-      <title>Here are some articles that I have written across various topics</title>
-      <link>//localhost:1313/blog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/</guid>
-      <description>&lt;h3 id=&#34;1-creating-a-https-connection-with-an-ssl-certificatehttpssamridh3215hashnodedevcreating-a-https-connection-with-an-ssl-certificate-for-apache-serversheading-how-does-https-work&#34;&gt;1. &lt;a href=&#34;https://samridh3215.hashnode.dev/creating-a-https-connection-with-an-ssl-certificate-for-apache-servers#heading-how-does-https-work&#34;&gt;Creating a HTTPS connection with an SSL certificate&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;h3 id=&#34;2-guide-to-developing-secure-apishttpssamridh3215hashnodedevguide-to-developing-secure-apis&#34;&gt;2. &lt;a href=&#34;https://samridh3215.hashnode.dev/guide-to-developing-secure-apis&#34;&gt;Guide to Developing Secure APIs&lt;/a&gt;&lt;/h3&gt;</description>
+      <description>A blockchain-based solution for the food industry supply chain, enhancing transparency and traceability through decentralization</description>
     </item>
   </channel>
 </rss>
