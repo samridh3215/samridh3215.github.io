@@ -1,0 +1,154 @@
+{{ define "main" }}
+<section class="layout-page section-stack">
+  <div class="article-layout">
+    <article class="article-main space-y-4">
+      <header class="space-y-2">
+        <h1 class="heading-page text-2xl sm:text-3xl">{{ .Title }}</h1>
+
+        <div class="text-[0.75rem] text-muted">
+          {{ with .Date }}
+          <span>{{ .Format "02 Jan 2006" }}</span>
+          {{ end }}
+          {{ with .ReadingTime }}
+          <span> • {{ . }} min read</span>
+          {{ end }}
+        </div>
+
+        {{ with .Params.description }}
+        <p class="max-w-xl text-sm text-muted">
+          {{ . }}
+        </p>
+        {{ end }}
+      </header>
+
+      <div class="card card-pad">
+        <div class="markdown-body">
+          {{ .Content }}
+        </div>
+      </div>
+    </article>
+
+    {{ if .TableOfContents }}
+    <aside class="article-toc">
+      <div class="toc-wrapper">
+        <div class="toc-header">
+          <h3 class="toc-title">
+            <i class="fas fa-list-ul"></i>
+            <span>Table of Contents</span>
+          </h3>
+          <button class="toc-toggle" aria-label="Toggle table of contents">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <nav class="toc-nav">
+          {{ .TableOfContents }}
+        </nav>
+      </div>
+    </aside>
+
+    <script>
+      (function () {
+        'use strict';
+
+        const tocWrapper = document.querySelector('.toc-wrapper');
+        const tocToggle = document.querySelector('.toc-toggle');
+        const tocNav = document.querySelector('.toc-nav');
+        const tocLinks = document.querySelectorAll('.toc-nav a');
+
+        if (!tocWrapper || !tocNav) return;
+
+        // =====================
+        // MOBILE TOGGLE
+        // =====================
+        if (tocToggle) {
+          tocToggle.addEventListener('click', function () {
+            tocWrapper.classList.toggle('collapsed');
+          });
+        }
+
+        // =====================
+        // SMOOTH SCROLLING
+        // =====================
+        tocLinks.forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              const yOffset = -80; // offset for sticky header
+              const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+              window.scrollTo({
+                top: y,
+                behavior: 'smooth'
+              });
+
+              // Update URL without scrolling
+              history.pushState(null, null, targetId);
+            }
+          });
+        });
+
+        // =====================
+        // ACTIVE LINK HIGHLIGHT
+        // =====================
+        const headings = document.querySelectorAll('.markdown-body h1[id], .markdown-body h2[id], .markdown-body h3[id], .markdown-body h4[id], .markdown-body h5[id], .markdown-body h6[id]');
+
+        let activeHeading = null;
+        const observer = new IntersectionObserver(
+          (entries) => {
+            // Find all currently intersecting headings
+            const intersectingHeadings = [];
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                intersectingHeadings.push({
+                  element: entry.target,
+                  top: entry.boundingClientRect.top
+                });
+              }
+            });
+
+            // If we have intersecting headings, find the one closest to the top
+            if (intersectingHeadings.length > 0) {
+              // Sort by distance from top (smallest positive value or largest negative)
+              intersectingHeadings.sort((a, b) => Math.abs(a.top) - Math.abs(b.top));
+
+              const closestHeading = intersectingHeadings[0].element;
+              const id = closestHeading.getAttribute('id');
+
+              if (id && id !== activeHeading) {
+                activeHeading = id;
+                const tocLink = document.querySelector(`.toc-nav a[href="#${id}"]`);
+
+                if (tocLink) {
+                  // Remove active from all links
+                  tocLinks.forEach(link => link.classList.remove('active'));
+                  // Add active to current link
+                  tocLink.classList.add('active');
+                }
+              }
+            }
+          },
+          {
+            rootMargin: '-80px 0px -80%',
+            threshold: [0, 0.25, 0.5, 0.75, 1]
+          }
+        );
+
+        // Observe all headings
+        headings.forEach((heading) => {
+          observer.observe(heading);
+        });
+
+        // Highlight first item by default
+        if (tocLinks.length > 0) {
+          tocLinks[0].classList.add('active');
+          activeHeading = tocLinks[0].getAttribute('href').substring(1);
+        }
+      })();
+    </script>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

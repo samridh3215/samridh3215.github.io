@@ -3,6 +3,7 @@ title: "Pay via Fingerprint"
 summary: "A biometric payment system for campus transactions using fingerprint authentication, developed as part of the Microprocessors and Computer Architecture course (UE21CS251B)"
 ShowToc: false
 weight: 2
+featured: true
 ---
 
 ## Overview

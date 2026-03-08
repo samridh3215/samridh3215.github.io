@@ -10,6 +10,12 @@ params:
   theme:
     defaultTheme: dark
 
+  home:
+    sections: ["hero", "now", "tech-marquee", "projects", "posts"]
+    showFeaturedProjects: true
+    featuredProjectsLimit: 4
+    projectsTitle: "Selected Work"
+
   hero:
     badge: Software Engineer
     title: Hi, I'm Samridh Anand.

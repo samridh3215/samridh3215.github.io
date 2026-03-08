@@ -3,6 +3,7 @@ title: "Early Speed Breaker Detection"
 summary: A crowdsourced IoT solution to reduce road accidents by providing advance warnings about speed breakers and potholes while creating a comprehensive database of road hazards
 ShowToc: true
 weight: 1
+featured: true
 ---
 
 ## Problem Statement

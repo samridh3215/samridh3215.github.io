@@ -29,6 +29,4 @@ Currently working on quality assurance and release engineering for distributed d
 - Published research on automated vulnerability detection at ICCCT 2025
 - Focus on applying AI to software security challenges
 
----
-
 [View My Projects →](/projects) | [Read My Articles →](/blog)

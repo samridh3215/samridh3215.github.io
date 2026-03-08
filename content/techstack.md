@@ -1,27 +1,14 @@
-### DevOps
+---
+title: "Technologies"
+ShowToc: false
+---
 
-![My Skills](https://skillicons.dev/icons?i=aws,docker,kubernetes,git,jenkins&perline=6)
-
-### Programming Languages
-
-![Languages](https://skillicons.dev/icons?i=python,javascript,go,java,c&perline=6)
-
-### Frameworks and libraries
-
-![Frameworks](https://skillicons.dev/icons?i=django,flask,react,npm,nodejs,express,pytorch&perline=10)
-
-### Security
-
-![Security](https://skillicons.dev/icons?i=kali&perline=6)
-
-### Databases
-
-![Database](https://skillicons.dev/icons?i=mysql,mongodb&perline=6)
-
-### Automation & AI
-
-![Automation & AI](https://skillicons.dev/icons?i=python,pytorch,tensorflow,selenium,bash&perline=6)
-
-### Others
-
-![Others](https://skillicons.dev/icons?i=raspberrypi,linux,html,css,jquery,md,&perline=10)
+| **Category** | **Technologies** |
+| :--- | :--- |
+| **DevOps** | AWS, Docker, Kubernetes, Git, Jenkins |
+| **Programming Languages** | Python, JavaScript, Go, Java, C |
+| **Frameworks & Libraries** | Django, Flask, React, Node.js & Express, PyTorch, npm |
+| **Security** | Kali Linux |
+| **Databases** | MySQL, MongoDB |
+| **Automation & AI** | Python, PyTorch, TensorFlow, Selenium, Bash |
+| **Others** | Raspberry Pi, Linux, HTML & CSS, jQuery, Markdown |

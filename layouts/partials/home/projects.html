@@ -1,0 +1,41 @@
+{{- $home := .Site.Params.home -}}
+{{ if ne $home.showFeaturedProjects false }}
+<div class="space-y-3 animate-fade-up">
+  <div class="space-y-1">
+    <h2 class="heading-section">
+      {{ default "Selected work" (default $home.projectstitle $home.projectsTitle) }}
+    </h2>
+    {{ with (default $home.projectssubtitle $home.projectsSubtitle) }}
+    <p class="text-xs text-muted">
+      {{ . }}
+    </p>
+    {{ end }}
+  </div>
+
+  {{ $projLimit := default $home.featuredprojectslimit $home.featuredProjectsLimit }}
+  {{ $limit := cond (gt (int $projLimit) 0) (int $projLimit) 3 }}
+  {{ $allProjects := where .Site.RegularPages "Section" "projects" }}
+  {{ $featured := where $allProjects "Params.featured" true }}
+  {{ if not (gt (len $featured) 0) }}
+  {{ $featured = $allProjects }}
+  {{ end }}
+  {{ $list := first $limit $featured }}
+
+  <div class="grid gap-4 md:grid-cols-2">
+    {{ range $list }}
+    {{ partial "components/project-card.html" (dict "Page" . "Root" $) }}
+    {{ else }}
+    <p class="text-xs text-muted">
+      No projects yet. Add some under <code>content/projects</code>.
+    </p>
+    {{ end }}
+  </div>
+
+  <div class="mt-3 flex justify-end">
+    <a href="{{ " /projects/" | relURL }}" class="btn-primary btn-primary-sm inline-flex items-center gap-2">
+      <span>View all projects</span>
+      <i class="fa-solid fa-arrow-right-long text-[0.8rem]"></i>
+    </a>
+  </div>
+</div>
+{{ end }}
