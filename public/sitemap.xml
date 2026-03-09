@@ -48,12 +48,14 @@
   </url><url>
     <loc>//localhost:1313/about/</loc>
   </url><url>
-    <loc>//localhost:1313/techstack/</loc>
-  </url><url>
     <loc>//localhost:1313/categories/</loc>
+  </url><url>
+    <loc>//localhost:1313/certifications/</loc>
   </url><url>
     <loc>//localhost:1313/projects/food-supply-chain/</loc>
   </url><url>
     <loc>//localhost:1313/projects/</loc>
+  </url><url>
+    <loc>//localhost:1313/techstack/</loc>
   </url>
 </urlset>

@@ -129,6 +129,13 @@
                 <span>Technologies</span>
               </a>
               <a
+                href="/certifications/"
+                class="nav-link link-underline flex items-center gap-1 "
+              >
+                
+                <span>Certifications</span>
+              </a>
+              <a
                 href="/projects/"
                 class="nav-link link-underline flex items-center gap-1 "
               >
@@ -230,6 +237,11 @@
           <span>Technologies</span>
         </a>
       
+        <a href="/certifications/" class="flex items-center gap-2 py-1.5">
+          
+          <span>Certifications</span>
+        </a>
+      
         <a href="/projects/" class="flex items-center gap-2 py-1.5">
           
           <span>Projects</span>
@@ -247,25 +259,25 @@
 
       <main class="flex-1">
         
-  <section class="layout-page section-stack">
-    <div class="article-layout">
-      <article class="article-main space-y-4">
-        <header class="space-y-2">
-          <h1 class="heading-page text-2xl sm:text-3xl">Mock Stock Trading Application</h1>
+<section class="layout-page section-stack">
+  <div class="article-layout">
+    <article class="article-main space-y-4">
+      <header class="space-y-2">
+        <h1 class="heading-page text-2xl sm:text-3xl">Mock Stock Trading Application</h1>
 
-          <div class="text-[0.75rem] text-muted">
-            
-            
-              <span> • 1 min read</span>
-            
-          </div>
-
+        <div class="text-[0.75rem] text-muted">
           
-        </header>
+          
+          <span> • 1 min read</span>
+          
+        </div>
 
-        <div class="card card-pad">
-          <div class="markdown-body">
-            <h2 id="overview">
+        
+      </header>
+
+      <div class="card card-pad">
+        <div class="markdown-body">
+          <h2 id="overview">
   <a href="#overview" class="md-heading-anchor">
     Overview
   </a>
@@ -317,24 +329,24 @@
 <li>Anyone interested in understanding stock market operations</li>
 </ul>
 
-          </div>
         </div>
-      </article>
+      </div>
+    </article>
 
-      
-        <aside class="article-toc">
-          <div class="toc-wrapper">
-            <div class="toc-header">
-              <h3 class="toc-title">
-                <i class="fas fa-list-ul"></i>
-                <span>Table of Contents</span>
-              </h3>
-              <button class="toc-toggle" aria-label="Toggle table of contents">
-                <i class="fas fa-chevron-down"></i>
-              </button>
-            </div>
-            <nav class="toc-nav">
-              <nav id="TableOfContents">
+    
+    <aside class="article-toc">
+      <div class="toc-wrapper">
+        <div class="toc-header">
+          <h3 class="toc-title">
+            <i class="fas fa-list-ul"></i>
+            <span>Table of Contents</span>
+          </h3>
+          <button class="toc-toggle" aria-label="Toggle table of contents">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <nav class="toc-nav">
+          <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#key-features">Key Features</a></li>
@@ -343,115 +355,115 @@
     <li><a href="#target-audience">Target Audience</a></li>
   </ul>
 </nav>
-            </nav>
-          </div>
-        </aside>
+        </nav>
+      </div>
+    </aside>
 
-        <script>
-        (function() {
-          'use strict';
+    <script>
+      (function () {
+        'use strict';
 
-          const tocWrapper = document.querySelector('.toc-wrapper');
-          const tocToggle = document.querySelector('.toc-toggle');
-          const tocNav = document.querySelector('.toc-nav');
-          const tocLinks = document.querySelectorAll('.toc-nav a');
+        const tocWrapper = document.querySelector('.toc-wrapper');
+        const tocToggle = document.querySelector('.toc-toggle');
+        const tocNav = document.querySelector('.toc-nav');
+        const tocLinks = document.querySelectorAll('.toc-nav a');
 
-          if (!tocWrapper || !tocNav) return;
+        if (!tocWrapper || !tocNav) return;
 
-          
-          
-          
-          if (tocToggle) {
-            tocToggle.addEventListener('click', function() {
-              tocWrapper.classList.toggle('collapsed');
-            });
-          }
-
-          
-          
-          
-          tocLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-              e.preventDefault();
-              const targetId = this.getAttribute('href');
-              const targetElement = document.querySelector(targetId);
-
-              if (targetElement) {
-                const yOffset = -80; 
-                const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-                window.scrollTo({
-                  top: y,
-                  behavior: 'smooth'
-                });
-
-                
-                history.pushState(null, null, targetId);
-              }
-            });
+        
+        
+        
+        if (tocToggle) {
+          tocToggle.addEventListener('click', function () {
+            tocWrapper.classList.toggle('collapsed');
           });
+        }
 
-          
-          
-          
-          const headings = document.querySelectorAll('.markdown-body h1[id], .markdown-body h2[id], .markdown-body h3[id], .markdown-body h4[id], .markdown-body h5[id], .markdown-body h6[id]');
+        
+        
+        
+        tocLinks.forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-          let activeHeading = null;
-          const observer = new IntersectionObserver(
-            (entries) => {
-              
-              const intersectingHeadings = [];
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  intersectingHeadings.push({
-                    element: entry.target,
-                    top: entry.boundingClientRect.top
-                  });
-                }
+            if (targetElement) {
+              const yOffset = -80; 
+              const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+              window.scrollTo({
+                top: y,
+                behavior: 'smooth'
               });
 
               
-              if (intersectingHeadings.length > 0) {
-                
-                intersectingHeadings.sort((a, b) => Math.abs(a.top) - Math.abs(b.top));
+              history.pushState(null, null, targetId);
+            }
+          });
+        });
 
-                const closestHeading = intersectingHeadings[0].element;
-                const id = closestHeading.getAttribute('id');
+        
+        
+        
+        const headings = document.querySelectorAll('.markdown-body h1[id], .markdown-body h2[id], .markdown-body h3[id], .markdown-body h4[id], .markdown-body h5[id], .markdown-body h6[id]');
 
-                if (id && id !== activeHeading) {
-                  activeHeading = id;
-                  const tocLink = document.querySelector(`.toc-nav a[href="#${id}"]`);
+        let activeHeading = null;
+        const observer = new IntersectionObserver(
+          (entries) => {
+            
+            const intersectingHeadings = [];
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                intersectingHeadings.push({
+                  element: entry.target,
+                  top: entry.boundingClientRect.top
+                });
+              }
+            });
 
-                  if (tocLink) {
-                    
-                    tocLinks.forEach(link => link.classList.remove('active'));
-                    
-                    tocLink.classList.add('active');
-                  }
+            
+            if (intersectingHeadings.length > 0) {
+              
+              intersectingHeadings.sort((a, b) => Math.abs(a.top) - Math.abs(b.top));
+
+              const closestHeading = intersectingHeadings[0].element;
+              const id = closestHeading.getAttribute('id');
+
+              if (id && id !== activeHeading) {
+                activeHeading = id;
+                const tocLink = document.querySelector(`.toc-nav a[href="#${id}"]`);
+
+                if (tocLink) {
+                  
+                  tocLinks.forEach(link => link.classList.remove('active'));
+                  
+                  tocLink.classList.add('active');
                 }
               }
-            },
-            {
-              rootMargin: '-80px 0px -80%',
-              threshold: [0, 0.25, 0.5, 0.75, 1]
             }
-          );
-
-          
-          headings.forEach((heading) => {
-            observer.observe(heading);
-          });
-
-          
-          if (tocLinks.length > 0) {
-            tocLinks[0].classList.add('active');
-            activeHeading = tocLinks[0].getAttribute('href').substring(1);
+          },
+          {
+            rootMargin: '-80px 0px -80%',
+            threshold: [0, 0.25, 0.5, 0.75, 1]
           }
-        })();
-        </script>
-      
-    </div>
-  </section>
+        );
+
+        
+        headings.forEach((heading) => {
+          observer.observe(heading);
+        });
+
+        
+        if (tocLinks.length > 0) {
+          tocLinks[0].classList.add('active');
+          activeHeading = tocLinks[0].getAttribute('href').substring(1);
+        }
+      })();
+    </script>
+    
+  </div>
+</section>
 
       </main>
 
