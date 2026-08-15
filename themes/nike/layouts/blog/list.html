@@ -16,7 +16,7 @@
 
       {{ $paginator := .Paginate .Pages }}
 
-      <div class="grid gap-4 md:grid-cols-2">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {{ range $paginator.Pages.ByDate.Reverse }}
           {{ partial "components/post-card.html" (dict "Page" . "Root" $) }}
         {{ end }}

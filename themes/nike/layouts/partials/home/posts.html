@@ -15,7 +15,7 @@
     {{ $limit := cond (gt (int $home.latestPostsLimit) 0) (int $home.latestPostsLimit) 3 }}
     {{ $posts := first $limit (where .Site.RegularPages "Section" "blog") }}
 
-    <div class="grid gap-4 md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       {{ range $posts }}
         {{ partial "components/post-card.html" (dict "Page" . "Root" $) }}
       {{ else }}
