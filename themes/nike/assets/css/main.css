@@ -152,9 +152,11 @@ a {
   border: 2px solid var(--color-accent);
 }
 
-.btn-primary:hover {
-  background: transparent;
-  color: var(--color-accent);
+@media (hover: hover) {
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--color-accent);
+  }
 }
 
 .btn-primary-sm {
@@ -165,9 +167,11 @@ a {
   border: 2px solid var(--color-accent);
 }
 
-.btn-primary-sm:hover {
-  background: transparent;
-  color: var(--color-accent);
+@media (hover: hover) {
+  .btn-primary-sm:hover {
+    background: transparent;
+    color: var(--color-accent);
+  }
 }
 
 .btn-ghost {
@@ -178,8 +182,10 @@ a {
   border: 2px solid var(--color-border);
 }
 
-.btn-ghost:hover {
-  border-color: var(--color-text);
+@media (hover: hover) {
+  .btn-ghost:hover {
+    border-color: var(--color-text);
+  }
 }
 
 /* ==========================================================================
@@ -196,9 +202,14 @@ a {
   transition: background-size 0.25s ease;
 }
 
-.link-underline:hover,
 .link-underline.text-text {
   background-size: 100% 2px;
+}
+
+@media (hover: hover) {
+  .link-underline:hover {
+    background-size: 100% 2px;
+  }
 }
 
 /* ==========================================================================
@@ -260,9 +271,14 @@ a {
   padding-bottom: 2px;
 }
 
-.nav-link:hover,
 .nav-link.text-text {
   color: var(--color-text);
+}
+
+@media (hover: hover) {
+  .nav-link:hover {
+    color: var(--color-text);
+  }
 }
 
 .nav-link.text-text {
@@ -369,8 +385,10 @@ a {
   border-bottom: none;
 }
 
-.archive-row:hover {
-  color: var(--color-text);
+@media (hover: hover) {
+  .archive-row:hover {
+    color: var(--color-text);
+  }
 }
 
 @media (max-width: 640px) {
@@ -388,8 +406,10 @@ a {
   transition: border-color 0.2s ease;
 }
 
-.card-home:hover {
-  border-color: var(--color-text);
+@media (hover: hover) {
+  .card-home:hover {
+    border-color: var(--color-text);
+  }
 }
 
 .card-home-header {
@@ -441,8 +461,10 @@ a {
   transition: color 0.2s ease;
 }
 
-.card-cta-btn:hover {
-  color: var(--color-accent);
+@media (hover: hover) {
+  .card-cta-btn:hover {
+    color: var(--color-accent);
+  }
 }
 
 .card-badge {
@@ -648,8 +670,10 @@ a {
   color: var(--color-text-muted);
 }
 
-.footer-link:hover {
-  color: var(--color-text);
+@media (hover: hover) {
+  .footer-link:hover {
+    color: var(--color-text);
+  }
 }
 
 /* ==========================================================================
@@ -723,8 +747,10 @@ a {
   text-decoration: none;
 }
 
-.toc-nav a:hover {
-  color: var(--color-text);
+@media (hover: hover) {
+  .toc-nav a:hover {
+    color: var(--color-text);
+  }
 }
 
 .toc-nav a.active {
@@ -926,9 +952,11 @@ a {
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.mb-action-btn:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
+@media (hover: hover) {
+  .mb-action-btn:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
 }
 
 .mb-codeblock-content {
@@ -1018,8 +1046,10 @@ a {
   text-align: left;
 }
 
-.error-link-card:hover {
-  border-color: var(--color-accent);
+@media (hover: hover) {
+  .error-link-card:hover {
+    border-color: var(--color-accent);
+  }
 }
 
 .error-link-card i {
