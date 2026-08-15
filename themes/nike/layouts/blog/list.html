@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <section class="layout-page">
+    <div class="page-int section-stack">
+      <header class="space-y-2">
+        <h1 class="heading-page text-3xl sm:text-4xl">Blog</h1>
+        {{ with .Site.Params.blogIntro }}
+          <p class="max-w-xl text-sm text-muted">
+            {{ . }}
+          </p>
+        {{ else }}
+          <p class="max-w-xl text-sm text-muted">
+            Notes on engineering, security, and building small, thoughtful tools.
+          </p>
+        {{ end }}
+      </header>
+
+      {{ $paginator := .Paginate .Pages }}
+
+      <div class="grid gap-4 md:grid-cols-2">
+        {{ range $paginator.Pages.ByDate.Reverse }}
+          {{ partial "components/post-card.html" (dict "Page" . "Root" $) }}
+        {{ end }}
+      </div>
+
+      {{ if gt $paginator.TotalPages 1 }}
+        <nav class="mt-6 flex items-center justify-between text-xs text-muted">
+          {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}" class="link-underline">
+              ← Newer posts
+            </a>
+          {{ else }}
+            <span></span>
+          {{ end }}
+
+          {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}" class="link-underline">
+              Older posts →
+            </a>
+          {{ else }}
+            <span></span>
+          {{ end }}
+        </nav>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

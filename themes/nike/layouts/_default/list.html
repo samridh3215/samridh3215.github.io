@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section class="layout-page-tight">
+  <div class="page-int">
+    <header class="mb-8">
+      <h1 class="heading-page text-3xl sm:text-4xl">{{ .Title }}</h1>
+      {{ with .Description }}
+      <p class="mt-2 text-sm text-muted">{{ . }}</p>
+      {{ end }}
+    </header>
+
+    <div class="space-y-6">
+      {{ range .Pages.ByDate.Reverse }}
+      <article class="border-b border-border pb-6 last:border-0">
+        <a href="{{ .RelPermalink }}" class="group block">
+          <h2 class="text-lg font-semibold tracking-tight group-hover:text-accent">
+            {{ .Title }}
+          </h2>
+          {{ with .Params.description }}
+          <p class="mt-1 text-sm text-muted">{{ . }}</p>
+          {{ end }}
+          {{ with .Date }}
+          <p class="mt-2 text-xs text-muted">{{ .Format "January 2, 2006" }}</p>
+          {{ end }}
+        </a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

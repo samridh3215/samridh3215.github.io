@@ -1,0 +1,8 @@
+{{- with .Description -}}
+<meta name="description" content="{{ . }}" />
+{{- else -}}
+<meta name="description" content="{{ .Site.Params.description }}" />
+{{- end -}}
+{{- with .Site.Params.author }}
+<meta name="author" content="{{ . }}" />
+{{- end }}

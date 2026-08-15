@@ -1,0 +1,16 @@
+{
+  "name": "samridh3215-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build tooling for the site's Tailwind CSS (site-level design system, layered on top of the minimal-black theme).",
+  "scripts": {
+    "build:css": "tailwindcss -i ./themes/nike/assets/css/main.css -o ./themes/nike/static/css/main.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "postcss-import": "^17.0.0",
+    "tailwindcss": "^3.4.18"
+  }
+}

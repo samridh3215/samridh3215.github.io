@@ -1,0 +1,80 @@
+{{/* props: Page (project page) */}}
+{{- $p := .Page -}}
+
+{{- $badge := cond ($p.Params.featured) "Featured" "" -}}
+
+{{- $repo := $p.Params.repo -}}
+{{- $repoIcon := $p.Params.repoIcon | default "fa-brands fa-github" -}}
+{{- $repoLabel := $p.Params.repoLabel | default "Repo" -}}
+
+{{- $demo := $p.Params.demo -}}
+{{- $demoIcon := $p.Params.demoIcon | default "fa-solid fa-play" -}}
+{{- $demoLabel := $p.Params.demoLabel | default "Demo" -}}
+
+{{- $website := $p.Params.website -}}
+{{- $websiteIcon := $p.Params.websiteIcon | default "fa-solid fa-globe" -}}
+{{- $websiteLabel := $p.Params.websiteLabel | default "Website" -}}
+
+<article class="card card-pad card-home card-home--project group">
+  <a href="{{ $p.RelPermalink }}" class="card-home-body">
+    <div class="card-home-header">
+      <div class="min-w-0 w-full">
+        <div class="flex items-center gap-2 min-w-0">
+          <h3 class="min-w-0 truncate group-hover:text-accent">
+            {{ $p.Title }}
+          </h3>
+          {{ with $badge }}
+            <span class="card-badge">{{ . }}</span>
+          {{ end }}
+        </div>
+
+        {{ with $p.Params.subtitle }}
+          <p class="mt-0.5 truncate text-[0.7rem] text-muted">
+            {{ . }}
+          </p>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ with $p.Params.description }}
+      <p class="mt-2 text-xs text-muted">
+        {{ . }}
+      </p>
+    {{ end }}
+
+    {{ with $p.Params.stack }}
+      <div class="mt-3 card-tag-row">
+        {{ range . }}
+          <span class="card-tag-pill">{{ . }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+  </a>
+
+  {{ if or $repo $demo $website }}
+    <div class="card-home-footer card-home-footer--buttons">
+      <div class="flex items-center gap-3">
+        {{ with $repo }}
+          <a href="{{ . }}" class="card-cta-btn" target="_blank" rel="noopener noreferrer">
+            <i class="{{ $repoIcon }} text-[0.75rem]"></i>
+            <span>{{ $repoLabel }}</span>
+          </a>
+        {{ end }}
+
+        {{ with $demo }}
+          <a href="{{ . }}" class="card-cta-btn" target="_blank" rel="noopener noreferrer">
+            <i class="{{ $demoIcon }} text-[0.75rem]"></i>
+            <span>{{ $demoLabel }}</span>
+          </a>
+        {{ end }}
+
+        {{ with $website }}
+          <a href="{{ . }}" class="card-cta-btn" target="_blank" rel="noopener noreferrer">
+            <i class="{{ $websiteIcon }} text-[0.75rem]"></i>
+            <span>{{ $websiteLabel }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</article>

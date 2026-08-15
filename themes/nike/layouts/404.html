@@ -1,0 +1,56 @@
+{{ define "main" }}
+  <section class="layout-page">
+    <div class="error-page">
+      <div class="error-content">
+        <div class="error-code">404</div>
+
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-description">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+
+        <div class="error-search">
+          <a href="/" class="btn-primary">
+            <i class="fa-solid fa-house"></i>
+            <span>Go Home</span>
+          </a>
+        </div>
+
+        <div class="error-links">
+          <h2 class="error-links-title">You might be interested in:</h2>
+          <div class="error-links-grid">
+            {{ with .Site.GetPage "/blog" }}
+              <a href="{{ .Permalink }}" class="error-link-card">
+                <i class="fa-regular fa-note-sticky"></i>
+                <div>
+                  <strong>Blog</strong>
+                  <span>Read latest articles</span>
+                </div>
+              </a>
+            {{ end }}
+
+            {{ with .Site.GetPage "/projects" }}
+              <a href="{{ .Permalink }}" class="error-link-card">
+                <i class="fa-regular fa-folder-open"></i>
+                <div>
+                  <strong>Projects</strong>
+                  <span>Explore my work</span>
+                </div>
+              </a>
+            {{ end }}
+
+            {{ with .Site.GetPage "/about" }}
+              <a href="{{ .Permalink }}" class="error-link-card">
+                <i class="fa-regular fa-user"></i>
+                <div>
+                  <strong>About</strong>
+                  <span>Learn more about me</span>
+                </div>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

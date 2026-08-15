@@ -1,0 +1,47 @@
+{{ define "main" }}
+  <section class="layout-page">
+    <div class="page-int section-stack">
+        <header class="space-y-2">
+        <h1 class="heading-page text-3xl sm:text-4xl">Projects</h1>
+
+        {{ with .Site.Params.projectsIntro }}
+          <p class="max-w-xl text-sm text-muted">
+            {{ . }}
+          </p>
+        {{ else }}
+          <p class="max-w-xl text-sm text-muted">
+            A selection of things I’ve been building – themes, tools, and experiments.
+          </p>
+        {{ end }}
+      </header>
+
+      {{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+
+      <div class="grid gap-4 md:grid-cols-2">
+        {{ range $paginator.Pages }}
+          {{ partial "components/project-card.html" (dict "Page" . "Root" $) }}
+        {{ end }}
+      </div>
+
+      {{ if gt $paginator.TotalPages 1 }}
+        <nav class="mt-6 flex items-center justify-between text-xs text-muted">
+          {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}" class="link-underline">
+              ← Newer projects
+            </a>
+          {{ else }}
+            <span></span>
+          {{ end }}
+
+          {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}" class="link-underline">
+              Older projects →
+            </a>
+          {{ else }}
+            <span></span>
+          {{ end }}
+        </nav>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

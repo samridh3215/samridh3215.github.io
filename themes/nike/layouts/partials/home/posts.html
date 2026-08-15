@@ -1,0 +1,38 @@
+{{- $home := .Site.Params.home -}}
+{{ if ne $home.showLatestPosts false }}
+  <div class="space-y-3 animate-fade-up">
+    <div class="space-y-1">
+      <h2 class="heading-section">
+        {{ default "Latest writing" $home.blogTitle }}
+      </h2>
+      {{ with $home.blogSubtitle }}
+        <p class="text-xs text-muted">
+          {{ . }}
+        </p>
+      {{ end }}
+    </div>
+
+    {{ $limit := cond (gt (int $home.latestPostsLimit) 0) (int $home.latestPostsLimit) 3 }}
+    {{ $posts := first $limit (where .Site.RegularPages "Section" "blog") }}
+
+    <div class="grid gap-4 md:grid-cols-2">
+      {{ range $posts }}
+        {{ partial "components/post-card.html" (dict "Page" . "Root" $) }}
+      {{ else }}
+        <p class="text-xs text-muted">
+          No posts yet. Add some under <code>content/blog</code>.
+        </p>
+      {{ end }}
+    </div>
+
+    <div class="mt-3 flex justify-end">
+      <a
+        href="{{ "/blog/" | relURL }}"
+        class="btn-primary-sm inline-flex items-center gap-2"
+      >
+        <span>View all posts</span>
+        <i class="fa-solid fa-arrow-right-long text-[0.8rem]"></i>
+      </a>
+    </div>
+  </div>
+{{ end }}

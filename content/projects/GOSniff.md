@@ -3,6 +3,7 @@ title: "GOSniff"
 summary: "A network packet analyzer written in Go with real-time web-based visualization"
 ShowToc: false
 weight: 4
+featured: false
 ---
 
 ## Overview

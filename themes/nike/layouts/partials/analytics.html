@@ -1,0 +1,23 @@
+{{- if not hugo.IsServer -}}
+
+<!-- Google Analytics (GA4) -->
+{{ with .Site.Params.analytics.googleAnalytics }}
+  {{ if . }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ . }}');
+    </script>
+  {{ end }}
+{{ end }}
+
+<!-- Plausible Analytics -->
+{{ with .Site.Params.analytics.plausible }}
+  {{ if .enabled }}
+    <script defer data-domain="{{ .domain }}" src="{{ default "https://plausible.io/js/script.js" .scriptUrl }}"></script>
+  {{ end }}
+{{ end }}
+
+{{- end -}}

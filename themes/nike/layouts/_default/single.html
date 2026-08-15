@@ -1,0 +1,54 @@
+{{ define "main" }}
+<section class="layout-page section-stack">
+  <div class="article-layout">
+    <article class="article-main space-y-6">
+      <header class="space-y-3">
+        <h1 class="heading-page text-4xl sm:text-5xl">{{ .Title }}</h1>
+
+        <div class="text-[0.75rem] text-muted">
+          {{ with .Date }}
+          <span>{{ .Format "02 Jan 2006" }}</span>
+          {{ end }}
+          {{ with .ReadingTime }}
+          <span> • {{ . }} min read</span>
+          {{ end }}
+        </div>
+
+        {{ with .Params.description }}
+        <p class="max-w-xl text-base text-muted">
+          {{ . }}
+        </p>
+        {{ end }}
+      </header>
+
+      <div class="card card-pad">
+        <div class="markdown-body">
+          {{ .Content }}
+        </div>
+      </div>
+    </article>
+
+    {{ if .TableOfContents }}
+    {{ $hasHeadings := findRE "<li" .TableOfContents }}
+    {{ if $hasHeadings }}
+    <aside class="article-toc">
+      <div class="toc-wrapper">
+        <div class="toc-header">
+          <h3 class="toc-title">
+            <i class="fas fa-list-ul"></i>
+            <span>Table of Contents</span>
+          </h3>
+          <button class="toc-toggle" aria-label="Toggle table of contents">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <nav class="toc-nav">
+          {{ .TableOfContents }}
+        </nav>
+      </div>
+    </aside>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,9 @@
+{{- if eq .Type "alert" -}}
+  <div class="md-alert md-alert-{{ .AlertType }}">
+    {{ .Text | safeHTML }}
+  </div>
+{{- else -}}
+  <blockquote class="md-blockquote">
+    {{ .Text | safeHTML }}
+  </blockquote>
+{{- end -}}

@@ -1,0 +1,28 @@
+{{- $hero := .Site.Params.hero -}}
+{{- $home := .Site.Params.home -}}
+
+{{ if $home.showNowSection }}
+  <div class="space-y-4">
+    <div class="space-y-3">
+      <h2 class="heading-section">{{ default "Now" $hero.nowLabel }}</h2>
+      <div class="card card-pad text-sm text-muted">
+        {{ with $hero.nowIntro }}
+          <p class="mb-3">{{ . }}</p>
+        {{ end }}
+
+        {{ with $hero.now }}
+          <ul class="list-disc space-y-1.5 pl-4">
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        {{ else }}
+          <p>
+            Add a <code>hero.now</code> list in your config to describe what you’re
+            focused on right now.
+          </p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

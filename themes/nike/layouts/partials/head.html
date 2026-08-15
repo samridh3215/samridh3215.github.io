@@ -1,0 +1,42 @@
+{{- $title := cond (ne .Title "") (printf "%s | %s" .Title .Site.Title) .Site.Title -}}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{{ $title }}</title>
+
+{{ partial "meta.html" . }}
+
+<!-- Favicon -->
+{{ with .Site.Params.favicon }}
+  <link rel="icon" type="image/x-icon" href="{{ . | relURL }}" />
+{{ else }}
+  {{ if fileExists "static/favicon.ico" }}
+    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}" />
+  {{ end }}
+  {{ if fileExists "static/favicon.png" }}
+    <link rel="icon" type="image/png" href="{{ "favicon.png" | relURL }}" />
+  {{ end }}
+  {{ if fileExists "static/favicon.svg" }}
+    <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}" />
+  {{ end }}
+{{ end }}
+
+<!-- Fonts: Barlow Condensed (display) + Barlow (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap"
+/>
+
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+
+{{ if .Site.Params.icons.useFontAwesome }}
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+  >
+{{ end }}
+
+<!-- Analytics -->
+{{ partial "analytics.html" . }}

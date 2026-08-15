@@ -2,6 +2,7 @@
 title: "Food Supply Chain" 
 summary: "A blockchain-based solution for the food industry supply chain, enhancing transparency and traceability through decentralization"
 ShowToc: true
+featured: false
 ---
 
 ## Overview

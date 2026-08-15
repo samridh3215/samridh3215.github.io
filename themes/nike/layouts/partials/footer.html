@@ -1,0 +1,65 @@
+<footer class="pb-6 pt-0">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <!-- Closing CTA -->
+    <div class="footer-cta">
+      <p class="eyebrow text-accent">Get in touch</p>
+      <h2 class="footer-cta-heading mt-2">
+        Let's build<br class="hidden sm:block" /> something great.
+      </h2>
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+        {{ with .Site.Params.hero.primary }}
+          <a href="{{ .href | default "/projects/" }}" class="btn-primary">
+            {{ .label | default "View projects" }}
+          </a>
+        {{ end }}
+        {{ range where .Site.Params.social "label" "Gmail" }}
+          <a href="{{ .url }}" class="btn-ghost">
+            Say hello
+          </a>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="footer-shell">
+      <div class="footer-inner">
+        <!-- Left -->
+        <div class="space-y-1">
+          <p class="footer-small">
+            &copy; {{ now.Format "2006" }} {{ .Site.Title }} — All rights
+            reserved.
+          </p>
+
+          <p class="footer-small flex flex-wrap items-center gap-1">
+            <span>Built with</span>
+
+            <a
+              href="https://gohugo.io/"
+              class="footer-link footer-float link-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Hugo</span>
+            </a>
+          </p>
+        </div>
+
+        <!-- Right -->
+        {{ with .Site.Params.social }}
+        <div class="footer-links">
+          {{ range . }}
+          <a
+            href="{{ .url }}"
+            class="footer-link footer-float link-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="{{ .icon }} text-[0.8rem]"></i>
+            <span>{{ .label }}</span>
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</footer>

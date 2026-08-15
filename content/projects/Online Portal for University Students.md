@@ -3,6 +3,7 @@ title: "Online Portal for University Students"
 summary: "A comprehensive university portal system developed using software engineering best practices and collaborative development methodologies"
 ShowToc: false
 weight: 6
+featured: false
 ---
 
 ## Overview

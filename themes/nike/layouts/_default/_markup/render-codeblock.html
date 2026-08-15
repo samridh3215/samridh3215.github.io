@@ -1,0 +1,61 @@
+{{- $lang := .Type | default "text" -}}
+{{- $filename := .Attributes.filename | default "" -}}
+{{- $id := printf "cb-%s" (printf "%d" .Ordinal | sha256 | truncate 8 "") -}}
+
+{{- $highlighted := transform.HighlightCodeBlock . -}}
+
+<div class="mb-codeblock" id="{{ $id }}" data-lang="{{ $lang | lower }}">
+  <div class="mb-codeblock-header">
+    <div class="mb-codeblock-left">
+      <span class="mb-codeblock-badge">
+        {{ $lang | upper }}
+      </span>
+      {{- if ne $filename "" -}}
+        <span class="mb-codeblock-filename">
+          <i class="fas fa-file-code" style="font-size: 0.65rem;"></i>
+          {{ $filename }}
+        </span>
+      {{- end -}}
+    </div>
+
+    <div class="mb-codeblock-actions">
+      <button class="mb-action-btn mb-copy-btn" aria-label="Copy code">
+        <i class="fas fa-copy"></i>
+        <span>Copy</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mb-codeblock-content">
+    {{ $highlighted.Wrapped }}
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  const codeblock = document.getElementById('{{ $id }}');
+  if (!codeblock) return;
+
+  const copyBtn = codeblock.querySelector('.mb-copy-btn');
+  if (!copyBtn) return;
+
+  copyBtn.addEventListener('click', async function() {
+    const codeCell = codeblock.querySelector('.lntd:last-child code');
+    const codeEl = codeCell || codeblock.querySelector('pre code');
+    const codeText = codeEl ? (codeEl.textContent || '') : '';
+
+    try {
+      await navigator.clipboard.writeText(codeText.trim());
+      const originalHTML = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+      setTimeout(function () {
+        copyBtn.innerHTML = originalHTML;
+      }, 2000);
+    } catch (err) {
+      console.error('Failed to copy code:', err);
+    }
+  });
+})();
+</script>

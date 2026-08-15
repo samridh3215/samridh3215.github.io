@@ -3,6 +3,7 @@ title: "Mock Stock Trading Application"
 summary: "A stock market simulation platform using historical data and virtual currency for risk-free trading practice"
 ShowToc: true
 weight: 5
+featured: false
 ---
 
 ## Overview

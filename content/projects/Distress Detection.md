@@ -4,6 +4,7 @@ summary: "An intelligent system designed to identify and respond to distress sit
 ShowToc: true
 weight: 10
 draft: true
+featured: false
 ---
 
 ## Overview

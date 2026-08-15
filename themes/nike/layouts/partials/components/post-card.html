@@ -1,0 +1,48 @@
+{{/* props: Page (post page) */}}
+{{- $p := .Page -}}
+{{- $category := $p.Params.category | default "Article" -}}
+
+<article class="card card-pad card-home card-home--post group">
+  <a href="{{ $p.RelPermalink }}" class="card-home-body">
+    <div class="card-home-header">
+      <div class="min-w-0 w-full">
+        <div class="flex items-start justify-between gap-2">
+          <div class="min-w-0">
+            <h3 class="truncate group-hover:text-accent">
+              {{ $p.Title }}
+            </h3>
+
+            <div class="mt-0.5 flex flex-wrap items-center gap-2 text-[0.68rem] text-muted">
+              {{ with $p.Date }}
+                <span>{{ .Format "02 Jan 2006" }}</span>
+              {{ end }}
+              {{ with $p.ReadingTime }}
+                <span>• {{ . }} min read</span>
+              {{ end }}
+            </div>
+          </div>
+
+          {{ with $category }}
+            <span class="card-badge card-badge--soft">
+              {{ . }}
+            </span>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    {{ with $p.Params.description }}
+      <p class="mt-2 text-xs text-muted">
+        {{ . }}
+      </p>
+    {{ end }}
+
+    {{ with $p.Params.tags }}
+      <div class="mt-3 card-tag-row">
+        {{ range first 3 . }}
+          <span class="card-tag-pill">{{ . }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+  </a>
+</article>

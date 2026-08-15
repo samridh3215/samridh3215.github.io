@@ -1,0 +1,22 @@
+{{- $home := .Site.Params.home -}}
+{{- $hero := .Site.Params.hero -}}
+{{- $tech := $home.tech -}}
+
+{{ with $tech }}
+  <div class="space-y-5 animate-fade-up">
+    <h3 class="heading-section text-base">
+      {{ default "What I Work With" $hero.techMarqueeLabel }}
+    </h3>
+
+    <div class="tech-strip">
+      <div class="tech-strip-track">
+        {{ range . }}
+          <span class="tech-strip-item">{{ . }}</span>
+        {{ end }}
+        {{ range . }}
+          <span class="tech-strip-item" aria-hidden="true">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

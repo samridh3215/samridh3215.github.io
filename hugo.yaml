@@ -1,20 +1,40 @@
 baseURL: /
 languageCode: en-us
 title: Samridh Anand
-theme: minimal-black
+theme: nike
 
 params:
   brand: Samridh Anand
   favicon: favicon.svg # Make sure to add one or remove this if not needed
+  description: "Samridh Anand — Software Engineer building AI-powered applications and distributed systems. Quality engineering at Couchbase, published ICCCT 2025 researcher."
+  author: samridhanand.2003@gmail.com
+
+  icons:
+    useFontAwesome: true
 
   theme:
     defaultTheme: dark
 
   home:
-    sections: ["hero", "now", "tech-marquee", "projects", "posts"]
+    sections: ["hero", "stats", "now", "tech-marquee", "projects", "posts"]
+    showNowSection: true
     showFeaturedProjects: true
     featuredProjectsLimit: 4
     projectsTitle: "Selected Work"
+    tech:
+      - Python
+      - Go
+      - JavaScript
+      - Java
+      - Docker
+      - Kubernetes
+      - AWS
+      - React
+      - PyTorch
+      - TensorFlow
+      - MongoDB
+      - MySQL
+      - Linux
 
   hero:
     badge: Software Engineer
@@ -22,11 +42,30 @@ params:
     role: "AI & Distributed Systems Enthusiast | Automation Lover | Security-Aware Developer"
     summary: "I am a software engineer with 1+ years of experience, focusing on building scalable AI-powered applications and distributed systems. My professional journey has deepened my understanding of distributed databases, while my passion for automation drives me to optimize workflows. I also maintain a keen interest in cybersecurity."
     location: Bangalore, India
-    
+
+    available: true
+    availableLabel: "Open to opportunities"
+
+    stats:
+      - value: "1+"
+        label: "Years of Experience"
+      - value: "9"
+        label: "Projects Shipped"
+      - value: "1"
+        label: "Published Research Paper"
+      - value: "2"
+        label: "Certifications"
+
+    nowIntro: "Currently working on quality assurance and release engineering for distributed database systems at Couchbase, with responsibilities including:"
+    now:
+      - "Ensuring software quality and release readiness"
+      - "Testing distributed systems at scale"
+      - "Validating system reliability and performance"
+
     primary:
       label: View Projects
       href: /projects/
-    
+
     secondary:
       label: Contact Me
       href: mailto:samridhanand.2003@gmail.com

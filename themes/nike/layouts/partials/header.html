@@ -1,0 +1,77 @@
+<header class="pt-6">
+  {{- $brand := .Site.Params.brand | default .Site.Title}}
+  {{- $mono := upper (substr $brand 0 2) -}}
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="nav-shell">
+      <div class="nav-inner">
+        <a href="{{ "/" | relURL }}" class="flex items-center gap-2">
+          {{ with .Site.Params.logo }}
+            <div class="flex h-8 w-8 items-center justify-center overflow-hidden bg-surface">
+              <img
+                src="{{ . | relURL }}"
+                alt="{{ $brand }}"
+                class="h-full w-full object-cover"
+              >
+            </div>
+          {{ else }}
+            <div class="logo-badge">
+              {{ $mono }}
+            </div>
+          {{ end }}
+          <span class="text-sm font-semibold tracking-wide">
+            {{ $brand }}
+          </span>
+        </a>
+
+        <div class="flex items-center gap-2">
+          <nav class="hidden items-center gap-6 md:flex">
+            {{- $current := . -}}
+            {{- range .Site.Menus.main }}
+              <a
+                href="{{ .URL | relURL }}"
+                class="nav-link link-underline flex items-center gap-1 {{ if $current.IsMenuCurrent "main" . }}text-text{{ end }}"
+              >
+                {{ with .Params.icon }}
+                  <i class="{{ . }} text-[0.75rem]"></i>
+                {{ end }}
+                <span>{{ .Name }}</span>
+              </a>
+            {{- end }}
+          </nav>
+
+          <button
+            type="button"
+            class="ml-1 inline-flex items-center justify-center border border-border bg-bg p-2 text-muted hover:text-accent md:hidden"
+            aria-label="Toggle navigation"
+            data-mobile-nav-toggle
+          >
+            <span class="sr-only">Open navigation</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="6" x2="20" y2="6" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="18" x2="20" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-2 max-w-7xl px-4 sm:px-6 md:hidden">
+    <nav
+      class="hidden border border-border bg-surface px-4 py-3 text-sm text-muted"
+      data-mobile-nav
+    >
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}" class="nav-link flex items-center gap-2 py-2">
+          {{ with .Params.icon }}
+            <i class="{{ . }} text-[0.8rem]"></i>
+          {{ end }}
+          <span>{{ .Name }}</span>
+        </a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

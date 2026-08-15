@@ -1,0 +1,77 @@
+{{- $hero := .Site.Params.hero -}}
+
+<div class="space-y-8 animate-fade-up">
+  <!-- Badge + availability -->
+  <div class="flex flex-wrap items-center gap-4">
+    {{ with $hero.badge }}
+      <p class="eyebrow text-accent">{{ . }}</p>
+    {{ end }}
+
+    {{ if $hero.available }}
+      <span class="badge-available px-3">
+        <span class="h-1.5 w-1.5 rounded-full"></span>
+        <span>{{ default "Available for work" $hero.availableLabel }}</span>
+      </span>
+    {{ end }}
+  </div>
+
+  <div class="space-y-1">
+    <h1 class="heading-hero text-5xl sm:text-7xl lg:text-8xl">
+      {{ default "Hi, I’m Your Name." $hero.title }}
+    </h1>
+    {{ with $hero.role }}
+      <p class="max-w-2xl text-base font-medium text-muted sm:text-lg">
+        {{ . }}
+      </p>
+    {{ end }}
+  </div>
+
+  {{ with $hero.summary }}
+    <p class="max-w-2xl text-base leading-relaxed text-muted">
+      {{ . }}
+    </p>
+  {{ end }}
+
+  <!-- Meta row: location + focus -->
+  <div class="flex flex-wrap gap-2 text-[0.7rem] text-muted">
+    {{ with $hero.location }}
+      <span class="inline-flex items-center gap-1.5 border border-border bg-surface/90 px-3 py-1.5">
+        <i class="fa-solid fa-location-dot text-[0.8rem]"></i>
+        <span class="font-medium">{{ . }}</span>
+      </span>
+    {{ end }}
+
+    {{ with $hero.focus }}
+      <span class="inline-flex items-center gap-1.5 border border-border bg-surface/80 px-3 py-1.5">
+        <i class="fa-regular fa-circle-dot text-[0.8rem]"></i>
+        <span>{{ . }}</span>
+      </span>
+    {{ end }}
+  </div>
+
+  <!-- Optional highlight pills -->
+  {{ with $hero.highlights }}
+    <div class="flex flex-wrap gap-2">
+      {{ range . }}
+        <span class="card-tag-pill">
+          {{ .label }}
+        </span>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <!-- CTAs -->
+  <div class="flex flex-wrap items-center gap-3 pt-2">
+    {{ with $hero.primary }}
+      <a href="{{ .href | default "/projects/" }}" class="btn-primary">
+        {{ .label | default "View projects" }}
+      </a>
+    {{ end }}
+
+    {{ with $hero.secondary }}
+      <a href="{{ .href | default "/blog/" }}" class="btn-ghost">
+        {{ .label | default "Read the blog" }}
+      </a>
+    {{ end }}
+  </div>
+</div>

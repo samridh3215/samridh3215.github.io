@@ -1,0 +1,12 @@
+{{- $hero := .Site.Params.hero -}}
+
+{{ with $hero.stats }}
+  <div class="stats-strip animate-fade-up">
+    {{ range . }}
+      <div class="stats-item">
+        <span class="stats-value">{{ .value }}</span>
+        <span class="stats-label">{{ .label }}</span>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
