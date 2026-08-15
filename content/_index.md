@@ -16,17 +16,17 @@ Currently working on quality assurance and release engineering for distributed d
 - Testing distributed systems at scale
 - Validating system reliability and performance
 
-### Areas of Interest
+### Areas of Expertise
 
-- **AI-Powered Applications**: Building intelligent systems using Large Language Models and machine learning
-- **Distributed Systems**: Exploring scalability, consistency, and fault-tolerance in large-scale architectures
-- **Automation**: Streamlining workflows and building efficient tools
-- **Security Engineering**: Applying security best practices and vulnerability detection (Subtle focus)
-- **Computer Networks**: Understanding network protocols and performance optimization
+- **Distributed Systems**: Testing and hardening distributed database systems at scale — consistency, fault-tolerance, and reliability
+- **Backend Engineering**: Building and validating backend services across the stack
+- **Security Engineering**: Published security research (ICCCT 2025) on automated vulnerability detection and repair; applying security best practices throughout the development lifecycle
+- **AI/LLM Developer Tooling**: Building practical LLM-powered tooling — RAG pipelines, MCP servers — that ships and gets used in production, not just prototyped
+- **Cloud & Infrastructure**: AWS, Docker, and Kubernetes for deploying and operating distributed systems
 
 ### Research & Publications
 
-- Published research on automated vulnerability detection at ICCCT 2025
+- [Published research on automated vulnerability detection at ICCCT 2025](https://link.springer.com/chapter/10.1007/978-981-95-3489-0_36)
 - Focus on applying AI to software security challenges
 
 [View My Projects →](/projects) | [Read My Articles →](/blog)

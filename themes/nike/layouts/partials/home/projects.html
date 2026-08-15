@@ -15,11 +15,12 @@
   {{ $projLimit := default $home.featuredprojectslimit $home.featuredProjectsLimit }}
   {{ $limit := cond (gt (int $projLimit) 0) (int $projLimit) 3 }}
   {{ $allProjects := where .Site.RegularPages "Section" "projects" }}
-  {{ $featured := where $allProjects "Params.featured" true }}
+  {{ $active := where $allProjects "Params.archived" "!=" true }}
+  {{ $featured := where $active "Params.featured" true }}
   {{ if not (gt (len $featured) 0) }}
-  {{ $featured = $allProjects }}
+  {{ $featured = $active }}
   {{ end }}
-  {{ $list := first $limit $featured }}
+  {{ $list := first $limit $featured.ByWeight }}
 
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     {{ range $list }}

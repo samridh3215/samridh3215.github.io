@@ -15,32 +15,31 @@
         {{ end }}
       </header>
 
-      {{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+      {{ $active := where .Pages "Params.archived" "!=" true }}
+      {{ $archived := where .Pages "Params.archived" "==" true }}
 
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {{ range $paginator.Pages }}
+        {{ range $active.ByWeight }}
           {{ partial "components/project-card.html" (dict "Page" . "Root" $) }}
         {{ end }}
       </div>
 
-      {{ if gt $paginator.TotalPages 1 }}
-        <nav class="mt-6 flex items-center justify-between text-xs text-muted">
-          {{ if $paginator.HasPrev }}
-            <a href="{{ $paginator.Prev.URL }}" class="link-underline">
-              ← Newer projects
-            </a>
-          {{ else }}
-            <span></span>
-          {{ end }}
+      {{ with $archived }}
+        <div class="space-y-4 border-t border-border pt-8">
+          <div class="space-y-1">
+            <h2 class="heading-section text-lg">Older Projects</h2>
+            <p class="text-xs text-muted">Earlier coursework and experiments.</p>
+          </div>
 
-          {{ if $paginator.HasNext }}
-            <a href="{{ $paginator.Next.URL }}" class="link-underline">
-              Older projects →
-            </a>
-          {{ else }}
-            <span></span>
-          {{ end }}
-        </nav>
+          <div class="border border-border">
+            {{ range .ByTitle }}
+              <a href="{{ .RelPermalink }}" class="archive-row">
+                <span>{{ .Title }}</span>
+                <i class="fa-solid fa-arrow-right text-[0.7rem]"></i>
+              </a>
+            {{ end }}
+          </div>
+        </div>
       {{ end }}
     </div>
   </section>

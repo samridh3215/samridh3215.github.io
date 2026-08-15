@@ -2,9 +2,11 @@
 title: "Early Speed Breaker Detection" 
 summary: A crowdsourced IoT solution to reduce road accidents by providing advance warnings about speed breakers and potholes while creating a comprehensive database of road hazards
 ShowToc: true
-weight: 1
+weight: 4
 featured: true
 ---
+
+> **Top 10 of 75 teams** at a national hackathon
 
 ## Problem Statement
 
@@ -42,6 +44,11 @@ This system reduces road accidents by alerting drivers in advance about upcoming
 - **Frontend**: HTML with JavaScript for data transmission and visualization
 - **Machine Learning**: TensorFlow for training RNN model to classify sensor data
 - **Database**: Geospatial database for storing location data
+
+## Results
+
+- **~80% classification accuracy** on the custom accelerometer + geolocation dataset
+- **Top 10 of 75 teams** at a national-level hackathon
 
 ## Key Features
 

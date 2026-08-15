@@ -6,7 +6,7 @@ theme: nike
 params:
   brand: Samridh Anand
   favicon: favicon.svg # Make sure to add one or remove this if not needed
-  description: "Samridh Anand — Software Engineer building AI-powered applications and distributed systems. Quality engineering at Couchbase, published ICCCT 2025 researcher."
+  description: "Samridh Anand — Software Engineer specializing in distributed systems, backend, and security. Distributed database engineering at Couchbase, published ICCCT 2025 security researcher, and builder of production AI/LLM developer tooling."
   author: samridhanand.2003@gmail.com
 
   icons:
@@ -16,11 +16,13 @@ params:
     defaultTheme: dark
 
   home:
-    sections: ["hero", "stats", "now", "tech-marquee", "projects", "posts"]
+    sections: ["hero", "stats", "now", "tech-marquee", "projects", "research", "posts", "about-teaser"]
     showNowSection: true
     showFeaturedProjects: true
     featuredProjectsLimit: 4
     projectsTitle: "Selected Work"
+    blogTitle: "Technical Writing"
+    aboutTeaser: "Software Engineer with 1+ years of experience in distributed systems, backend, and security engineering — currently working on distributed database testing and release engineering at Couchbase. B.E. in Computer Science with a specialization in Computer Networks and Security from PES University (2025)."
     tech:
       - Python
       - Go
@@ -39,8 +41,8 @@ params:
   hero:
     badge: Software Engineer
     title: Hi, I'm Samridh Anand.
-    role: "AI & Distributed Systems Enthusiast | Automation Lover | Security-Aware Developer"
-    summary: "I am a software engineer with 1+ years of experience, focusing on building scalable AI-powered applications and distributed systems. My professional journey has deepened my understanding of distributed databases, while my passion for automation drives me to optimize workflows. I also maintain a keen interest in cybersecurity."
+    role: "Software Engineer — Distributed Systems, Backend & Security"
+    summary: "Software engineer with 1+ years of experience across distributed systems, backend engineering, and security — testing and hardening distributed database systems at Couchbase, publishing peer-reviewed security research (ICCCT 2025), and building AI/LLM developer tooling used in production. Comfortable working the full stack, from cloud infrastructure (AWS, Docker, Kubernetes) down to protocol-level systems work."
     location: Bangalore, India
 
     available: true
@@ -56,6 +58,7 @@ params:
       - value: "2"
         label: "Certifications"
 
+    nowLabel: "Current Work"
     nowIntro: "Currently working on quality assurance and release engineering for distributed database systems at Couchbase, with responsibilities including:"
     now:
       - "Ensuring software quality and release readiness"
@@ -69,6 +72,13 @@ params:
     secondary:
       label: Contact Me
       href: mailto:samridhanand.2003@gmail.com
+
+  research:
+    - title: "A Multi-Agent RAG Framework for Automated Source Code Vulnerability Detection and Repair"
+      venue: "ICCCT 2025"
+      summary: "A multi-agent LLM system with Retrieval Augmented Generation over MITRE's Top 25 CWEs for automated C/C++ vulnerability detection and repair — a 60.71% improvement in correct detection/repair over a single-LLM baseline."
+      paperUrl: "https://link.springer.com/chapter/10.1007/978-981-95-3489-0_36"
+      projectUrl: "/projects/vulnerability-detection-and-repair-in-source-code/"
 
   social:
     - label: LinkedIn

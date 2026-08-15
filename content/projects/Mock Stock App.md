@@ -4,6 +4,7 @@ summary: "A stock market simulation platform using historical data and virtual c
 ShowToc: true
 weight: 5
 featured: false
+archived: true
 ---
 
 ## Overview

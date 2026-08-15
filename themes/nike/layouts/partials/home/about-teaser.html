@@ -1,0 +1,13 @@
+{{- $home := .Site.Params.home -}}
+
+{{ with $home.aboutTeaser }}
+  <div class="space-y-3 animate-fade-up">
+    <h2 class="heading-section">About</h2>
+    <div class="card card-pad">
+      <p class="max-w-2xl text-sm leading-relaxed text-muted">{{ . }}</p>
+      <a href="{{ "/about/" | relURL }}" class="btn-ghost mt-4 inline-flex">
+        Read full bio
+      </a>
+    </div>
+  </div>
+{{ end }}

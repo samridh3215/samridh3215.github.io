@@ -4,6 +4,7 @@ summary: "A comprehensive university portal system developed using software engi
 ShowToc: false
 weight: 6
 featured: false
+archived: true
 ---
 
 ## Overview

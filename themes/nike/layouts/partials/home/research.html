@@ -1,0 +1,32 @@
+{{- $research := .Site.Params.research -}}
+
+{{ with $research }}
+  <div class="space-y-3 animate-fade-up">
+    <h2 class="heading-section">Research</h2>
+
+    <div class="space-y-4">
+      {{ range . }}
+        <div class="card card-pad research-card">
+          <p class="eyebrow text-accent">{{ .venue }}</p>
+          <h3 class="mt-2">{{ .title }}</h3>
+          <p class="mt-2 text-sm text-muted">{{ .summary }}</p>
+
+          <div class="mt-4 flex flex-wrap gap-4">
+            {{ with .paperUrl }}
+              <a href="{{ . }}" class="card-cta-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-lines text-[0.75rem]"></i>
+                <span>Read the Paper</span>
+              </a>
+            {{ end }}
+            {{ with .projectUrl }}
+              <a href="{{ . | relURL }}" class="card-cta-btn">
+                <i class="fa-solid fa-arrow-right-long text-[0.75rem]"></i>
+                <span>Project Write-up</span>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
