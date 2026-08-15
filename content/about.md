@@ -22,7 +22,7 @@ Currently working on quality assurance and release engineering for distributed d
 
 ### Research & Publications
 
-- Published research on automated vulnerability detection at ICCCT 2025
+- [Published research on automated vulnerability detection at ICCCT 2025](https://link.springer.com/chapter/10.1007/978-981-95-3489-0_36)
 - Focus on applying AI to software security challenges
 
 ---
