@@ -19,3 +19,7 @@ Used day-to-day with Cursor, ContextPlus reduced the number of prompts needed to
 - **Repository-Aware Context Retrieval**: Automatically surfaces relevant code context from across the repository, not just open files
 - **MCP Server Architecture**: Built as a Model Context Protocol server that plugs directly into coding agent workflows
 - **Cursor Integration**: Used in production with Cursor to accelerate day-to-day engineering work
+
+## Source Code
+
+The GitHub repository is not publicly available because this is an internal company project.
