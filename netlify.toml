@@ -1,0 +1,5 @@
+# Plain static site: no build step, publish the repository root.
+# This file overrides the build command and publish directory set in the Netlify dashboard.
+[build]
+  command = "echo 'static site, nothing to build'"
+  publish = "."
