@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research | Samridh Anand</title>
+<meta name="description" content="A Multi-Agent RAG Framework for Automated Source Code Vulnerability Detection and Repair (ICCCT 2025): 60.71% more correct detection and repair than a single-LLM baseline.">
+<link rel="canonical" href="https://samridh3215.github.io/research.html">
+<meta name="author" content="Samridh Anand">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Samridh Anand">
+<meta property="og:title" content="Research | Samridh Anand">
+<meta property="og:description" content="A Multi-Agent RAG Framework for Automated Source Code Vulnerability Detection and Repair (ICCCT 2025): 60.71% more correct detection and repair than a single-LLM baseline.">
+<meta property="og:url" content="https://samridh3215.github.io/research.html">
+<meta property="og:image" content="https://samridh3215.github.io/icons/web-app-manifest-512x512.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#14171f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "A Multi-Agent RAG Framework for Automated Source Code Vulnerability Detection and Repair", "url": "https://link.springer.com/chapter/10.1007/978-981-95-3489-0_36", "datePublished": "2025", "isPartOf": {"@type": "Event", "name": "ICCCT 2025, International Conference on Computer and Communication Technology"}, "publisher": {"@type": "Organization", "name": "Springer"}, "author": [{"@type": "Person", "name": "Samridh Anand"}, {"@type": "Person", "name": "Sakshi S"}, {"@type": "Person", "name": "Samritha R"}, {"@type": "Person", "name": "Samarth S I"}, {"@type": "Person", "name": "Shruthi L"}], "about": ["Vulnerability detection", "Automated program repair", "Retrieval augmented generation", "LLM agents"]}</script>
+
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="icons/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="visually-hidden" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="nav__brand" href="index.html">Samridh Anand</a>
+    <nav aria-label="Primary"><ul class="nav__links"><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="research.html" aria-current="page">Research</a></li><li><a href="writing.html">Writing</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-title"><div class="container"><h1 data-rise>Research</h1><p class="lead">Published at ICCCT 2025 (International Conference on Computer and Communication Technology).</p></div></section>
+<section class="section"><div class="container split">
+  <div data-rise><p class="card__tag">Springer · 2025</p><h2>A Multi-Agent RAG Framework for Automated Source Code Vulnerability Detection and Repair</h2>
+  <p class="muted" style="margin-top:var(--space-md)">Samridh Anand, Sakshi S, Samritha R, Samarth S I, Shruthi L. PES University, Bengaluru.</p>
+  <div class="actions" style="margin-top:var(--space-lg)"><a class="key key--primary" href="https://link.springer.com/chapter/10.1007/978-981-95-3489-0_36" target="_blank" rel="noopener">Read the paper</a></div></div>
+  <div class="prose" data-rise>
+    <h3>Problem</h3>
+    <p>Manual code review is slow, static analysers raise many false positives, good real-world vulnerability datasets are scarce, and most tools stop at detection and leave the fix to a developer.</p>
+    <h3>Approach</h3>
+    <p>Three specialised LLM agents cooperate: one identifies attack vectors, one confirms a specific CWE, one writes the fix. A ChromaDB knowledge base of MITRE's Top 25 CWEs, embedded with all-MiniLM-L6-v2, grounds each step to reduce hallucination. The loop repeats until no vulnerability remains or an attempt limit is reached. Output is structured JSON with explicit validation.</p>
+    <h3>Results</h3>
+    <p>Evaluated on 92 C and C++ samples from CVEFixes, against a single-LLM baseline without RAG or agents.</p>
+  </div>
+</div></section>
+<section class="section"><div class="container">
+  <h2 class="visually-hidden">Architecture</h2>
+  <figure class="fig fig--svg fig--wide" data-rise><div class="fig__scroll"><svg viewBox="0 0 960 330" role="img" aria-labelledby="arch-t arch-d" class="arch">
+<title id="arch-t">Multi-agent RAG framework for vulnerability detection and repair</title>
+<desc id="arch-d">C and C++ source goes through three LLM agents in turn: attack vector identification, vulnerability detection and remediation. The loop repeats until no vulnerabilities remain or an attempt limit is reached, then outputs patched code. Detection and remediation retrieve context from a ChromaDB store built from MITRE's Top 25 CWEs.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ar"/></marker></defs>
+<g class="n"><rect x="10" y="70" width="120" height="70" rx="8"/><text x="70.0" y="99.0" text-anchor="middle" class="t">Source code</text><text x="70.0" y="119.0" text-anchor="middle" class="s">C and C++</text></g>
+<g class="a"><rect x="170" y="70" width="190" height="70" rx="8"/><text x="265.0" y="99.0" text-anchor="middle" class="t">Attack vector agent</text><text x="265.0" y="119.0" text-anchor="middle" class="s">finds potential weaknesses</text></g>
+<g class="a"><rect x="400" y="70" width="190" height="70" rx="8"/><text x="495.0" y="99.0" text-anchor="middle" class="t">Detection agent</text><text x="495.0" y="119.0" text-anchor="middle" class="s">confirms a specific CWE</text></g>
+<g class="a"><rect x="630" y="70" width="190" height="70" rx="8"/><text x="725.0" y="99.0" text-anchor="middle" class="t">Remediation agent</text><text x="725.0" y="119.0" text-anchor="middle" class="s">writes the secure fix</text></g>
+<g class="n"><rect x="850" y="70" width="100" height="70" rx="8"/><text x="900.0" y="99.0" text-anchor="middle" class="t">Patched</text><text x="900.0" y="119.0" text-anchor="middle" class="s">code</text></g>
+<g class="l"><path d="M130 105H168" marker-end="url(#ah)"/><path d="M360 105H398" marker-end="url(#ah)"/><path d="M590 105H628" marker-end="url(#ah)"/><path d="M820 105H848" marker-end="url(#ah)"/></g>
+<path class="loop" d="M725 70V30H265V68" marker-end="url(#ah)"/>
+<text x="495" y="22" text-anchor="middle" class="s">repeat until no vulnerabilities remain or the attempt limit is reached</text>
+<g class="n"><rect x="10" y="230" width="190" height="70" rx="8"/><text x="105.0" y="259.0" text-anchor="middle" class="t">MITRE Top 25 CWEs</text><text x="105.0" y="279.0" text-anchor="middle" class="s">descriptions, mitigations, examples</text></g>
+<g class="n"><rect x="250" y="230" width="190" height="70" rx="8"/><text x="345.0" y="259.0" text-anchor="middle" class="t">Embedding model</text><text x="345.0" y="279.0" text-anchor="middle" class="s">all-MiniLM-L6-v2</text></g>
+<g class="a"><rect x="490" y="230" width="190" height="70" rx="8"/><text x="585.0" y="259.0" text-anchor="middle" class="t">ChromaDB</text><text x="585.0" y="279.0" text-anchor="middle" class="s">vector knowledge base</text></g>
+<g class="l"><path d="M200 265H248" marker-end="url(#ah)"/><path d="M440 265H488" marker-end="url(#ah)"/></g>
+<path class="l2" d="M560 230L505 142" marker-end="url(#ah)"/><path class="l2" d="M620 230L705 142" marker-end="url(#ah)"/>
+<text x="740" y="200" class="s">retrieved context grounds</text><text x="740" y="217" class="s">detection and repair</text>
+<text x="10" y="195" class="s">Agents run on Gemini 1.5 Flash; structured JSON output is validated at each step.</text>
+</svg></div><figcaption>Framework overview, redrawn from the paper's method: three LLM agents in a repair loop, grounded by retrieval over MITRE's Top 25 CWEs.</figcaption></figure>
+</div></section>
+<section class="section"><div class="container">
+  <table class="ledger ledger--cols" data-rise>
+    <thead><tr><th>Metric</th><th>Multi-agent + RAG</th><th>Single LLM</th><th>Change</th></tr></thead>
+    <tbody>
+    <tr><th scope="row">Correct predictions</th><td class="num">45 / 92</td><td class="num">28 / 92</td><td class="num"><strong>+60.71%</strong></td></tr>
+    <tr><th scope="row">Incorrect predictions</th><td class="num">33 / 92</td><td class="num">38 / 92</td><td class="num"><strong>-13.16%</strong></td></tr>
+    <tr><th scope="row">System errors</th><td class="num">14 / 92</td><td class="num">26 / 92</td><td class="num"><strong>-46.15%</strong></td></tr>
+    </tbody></table>
+  <div class="split" style="margin-top:var(--space-2xl)">
+    <h3 data-rise>Limitations</h3>
+    <ul class="list" data-rise>
+      <li>Weaker on authorisation and privilege escalation flaws that need project-wide context.</li>
+      <li>Occasional JSON escaping problems with special characters in structured output.</li>
+      <li>Scoped to MITRE's Top 25 CWEs; 3 to 10 seconds per function.</li>
+    </ul>
+  </div>
+</div></section>
+</main>
+<footer class="foot" id="contact">
+  <div class="container foot__inner">
+    <div>
+      <p class="foot__lead">Open to software engineering roles in distributed systems, backend and security.</p>
+      <a class="foot__mail" href="mailto:samridhanand.2003@gmail.com">samridhanand.2003@gmail.com</a>
+    </div>
+    <ul class="foot__links">
+      <li><a href="https://github.com/samridh3215" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/samridh-anand-985415241/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://samridh3215.hashnode.dev" target="_blank" rel="noopener">Blog</a></li>
+    </ul>
+  </div>
+  <div class="container"><p class="foot__legal">© 2026 Samridh Anand. Bangalore, India.</p></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

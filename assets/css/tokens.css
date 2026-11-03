@@ -28,3 +28,35 @@
   --shadow-key-press: inset 0 1px 2px oklch(21% 0.028 262 / 0.14);
   --tracking-display: -0.028em; --display-weight: 600;
 }
+
+/* ---------- dark theme ---------- */
+:root {
+  color-scheme: dark;
+  --color-paper: oklch(17% 0.022 262); --color-paper-2: oklch(21% 0.024 262); --color-paper-3: oklch(25% 0.026 262);
+  --color-ink: oklch(94% 0.010 250); --color-ink-2: oklch(79% 0.016 255); --color-muted: oklch(65% 0.02 257);
+  --color-rule: oklch(27% 0.022 261); --color-rule-2: oklch(36% 0.026 260);
+  --color-accent: oklch(70% 0.15 258); --color-accent-2: oklch(78% 0.12 254); --color-accent-wash: oklch(24% 0.05 259);
+  --color-accent-ink: oklch(16% 0.03 262); --color-focus: oklch(78% 0.12 254);
+  --color-accent-deep: oklch(80% 0.11 256); --color-accent-edge: oklch(48% 0.15 260);
+  --color-glyph-1: oklch(32% 0.03 262); --color-glyph-2: oklch(42% 0.055 260); --color-glyph-3: oklch(55% 0.10 258); --color-glyph-4: oklch(68% 0.14 256);
+  --color-key-face: oklch(25% 0.024 262); --color-key-edge: oklch(12% 0.02 262);
+  --shadow-card: 0 1px 2px oklch(0% 0 0 / 0.4);
+  --shadow-key: 0 3px 0 0 var(--color-key-edge), 0 6px 8px -4px oklch(0% 0 0 / 0.5), inset 0 1px 0 oklch(100% 0 0 / 0.07);
+  --shadow-key-accent: 0 3px 0 0 var(--color-accent-edge), 0 6px 8px -4px oklch(0% 0 0 / 0.5), inset 0 1px 0 oklch(100% 0 0 / 0.25);
+  --shadow-key-press: inset 0 1px 2px oklch(0% 0 0 / 0.4);
+}
+
+/* ---------- off the clock: athlete palette (volt on near-black) ---------- */
+:root[data-mode="off"] {
+  --font-display: "Barlow Condensed", "Familjen Grotesk", system-ui, sans-serif;
+  --tracking-display: 0.005em; --display-weight: 700;
+  --radius-card: 0; --radius-input: 0; --radius-pill: 0;
+  --color-paper: oklch(14.5% 0.006 270); --color-paper-2: oklch(19% 0.008 270); --color-paper-3: oklch(23.5% 0.01 270);
+  --color-ink: oklch(96% 0.005 100); --color-ink-2: oklch(80% 0.01 100); --color-muted: oklch(65% 0.012 100);
+  --color-rule: oklch(26% 0.01 270); --color-rule-2: oklch(38% 0.014 270);
+  --color-accent: oklch(89% 0.2 122); --color-accent-2: oklch(93% 0.17 118); --color-accent-wash: oklch(26% 0.07 122);
+  --color-accent-ink: oklch(15% 0.03 122); --color-focus: oklch(93% 0.17 118);
+  --color-accent-deep: oklch(92% 0.15 120); --color-accent-edge: oklch(62% 0.16 122);
+  --color-glyph-1: oklch(30% 0.04 122); --color-glyph-2: oklch(42% 0.08 122); --color-glyph-3: oklch(60% 0.13 122); --color-glyph-4: oklch(80% 0.17 122);
+  --color-key-face: oklch(21% 0.01 270); --color-key-edge: oklch(8% 0.01 270);
+}
