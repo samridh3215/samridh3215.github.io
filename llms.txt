@@ -1,0 +1,31 @@
+# Samridh Anand
+
+> Software engineer in Bangalore, India, working on distributed systems, backend and security. Quality and release engineering for a distributed database at Couchbase. Published security research (ICCCT 2025). Builds LLM developer tooling (MCP servers, RAG). B.E. Computer Science (Computer Networks and Security), PES University, 2025.
+
+Contact: samridhanand.2003@gmail.com
+GitHub: https://github.com/samridh3215
+LinkedIn: https://www.linkedin.com/in/samridh-anand-985415241/
+Strava: https://www.strava.com/athletes/23573279
+
+## Pages
+- [Home](https://samridh3215.github.io/): summary, experience, selected projects, about, expertise, technologies, certifications, and an off-hours view of life outside work (HYROX, running)
+- [Projects](https://samridh3215.github.io/projects.html): all projects with stacks, results and links
+- [Research](https://samridh3215.github.io/research.html): ICCCT 2025 paper, method and results
+- [Writing](https://samridh3215.github.io/writing.html): technical articles
+
+## Research
+- [A Multi-Agent RAG Framework for Automated Source Code Vulnerability Detection and Repair](https://link.springer.com/chapter/10.1007/978-981-95-3489-0_36): ICCCT 2025. Three LLM agents (attack vector identification, vulnerability detection, remediation) with RAG over MITRE's Top 25 CWEs. 45/92 correct vs 28/92 for a single-LLM baseline (+60.71%).
+
+## Projects
+- [universalMods](https://samridh3215.github.io/projects.html#universalmods): A moddable local floor for running a team of Codex and Claude Code agents. (Node.js, TypeScript, React, MCP, Codex, Claude Code)
+- [GenieTest](https://samridh3215.github.io/projects.html#genietest): Generates functional tests from RAG over a team's own tests and helper functions. (MCP, RAG, Cursor, Snowflake Arctic, OpenAI Batch API, Python)
+- [GOSniff](https://samridh3215.github.io/projects.html#gosniff): A packet analyzer in Go that streams live captures to a browser. (Go, WebSocket, Networking)
+- [Early Speed Breaker Detection](https://samridh3215.github.io/projects.html#speedbreaker): Crowdsourced accelerometer data and an RNN warn drivers of hazards ahead. (TensorFlow, RNN, Django, IoT)
+- [Pay via Fingerprint](https://samridh3215.github.io/projects.html#finpay): Biometric campus payments on a tab model. (Flask, MongoDB, Raspberry Pi)
+- [Mock Stock Trading](https://samridh3215.github.io/projects.html#stocks): A trading simulator on historical market data, and where most of my full stack knowledge comes from. Built before AI coding tools, from Stack Overflow and YouTube tutorials. (Full stack, Historical market data)
+
+## Skills
+Languages: Python, JavaScript, Go, Java, C. Infrastructure: AWS, Docker, Kubernetes, Git, Jenkins. Frameworks: Django, Flask, React, Node.js and Express, PyTorch. Databases: MySQL, MongoDB. AI and automation: RAG, MCP, TensorFlow, Selenium, Bash.
+
+## Outside work
+Adventurous and fitness focused. HYROX 1:27:39, 10K run 54 min, 5K personal best 23 min.
