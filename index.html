@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samridh Anand, distributed systems and security engineer</title>
+<meta name="description" content="Samridh Anand is a software engineer in Bangalore testing distributed databases at Couchbase, with published security research (ICCCT 2025) and production LLM developer tooling.">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="icons/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="visually-hidden" href="#work">Skip to work</a>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="nav__brand" href="./">Samridh Anand</a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="top">
+    <canvas class="hero__field" id="field" aria-hidden="true"></canvas>
+    <div class="container hero__inner">
+      <h1 id="top" data-split>Distributed systems, tested until they break.</h1>
+      <div class="hero__plate" data-rise>
+        <p class="lead">Software engineer at Couchbase in Bangalore, working on backend and security.</p>
+        <div class="actions">
+          <a class="key key--primary" href="#work">See the work</a>
+          <a class="key" href="mailto:samridhanand.2003@gmail.com">Email me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="work-h">
+    <div class="container">
+      <div class="section__head" data-rise>
+        <h2 id="work-h">Selected work</h2>
+        <p>Tooling for AI coding agents, a packet analyzer in Go, and a hackathon finalist.</p>
+      </div>
+      <ol class="index">
+        <li><a class="row" href="work.html#contextplus" data-row>
+          <span class="row__n">01</span>
+          <span class="row__t">ContextPlus</span>
+          <span class="row__d">An MCP server that gives coding agents repository-aware context. Prompts to production-ready code fell from 4 to 8 down to 1 to 2.</span>
+          <span class="row__s">MCP, Cursor, internal</span>
+        </a></li>
+        <li><a class="row" href="work.html#genietest" data-row>
+          <span class="row__n">02</span>
+          <span class="row__t">GenieTest</span>
+          <span class="row__d">Generates functional tests from RAG over a team’s own test and helper functions, through an MCP server.</span>
+          <span class="row__s">MCP, RAG, Snowflake Arctic</span>
+        </a></li>
+        <li><a class="row" href="work.html#gosniff" data-row>
+          <span class="row__n">03</span>
+          <span class="row__t">GOSniff</span>
+          <span class="row__d">A packet analyzer in Go. Promiscuous capture streams over WebSocket to a live browser view.</span>
+          <span class="row__s">Go, WebSocket</span>
+        </a></li>
+        <li><a class="row" href="work.html#speedbreaker" data-row>
+          <span class="row__n">04</span>
+          <span class="row__t">Early Speed Breaker Detection</span>
+          <span class="row__d">Crowdsourced accelerometer data and an RNN warn drivers of hazards. Top 10 of 75 teams at a national hackathon.</span>
+          <span class="row__s">TensorFlow, IoT</span>
+        </a></li>
+      </ol>
+      <p style="margin-top: var(--space-lg)"><a href="work.html">All projects and certifications</a></p>
+    </div>
+  </section>
+
+  <section class="section band" id="research" aria-labelledby="research-h">
+    <div class="container case">
+      <div data-rise>
+        <p class="note">ICCCT 2025, published</p>
+        <h2 id="research-h" style="margin-top: var(--space-sm)">Agents that find a vulnerability and fix it.</h2>
+        <p class="figure num" style="margin-top: var(--space-xl)" data-count="60.71">60.71%</p>
+        <p class="muted" style="margin-top: var(--space-sm)">more correct detection and repair than a single-LLM baseline on C and C++.</p>
+        <div class="actions" style="margin-top: var(--space-xl)">
+          <a class="key key--primary" href="https://link.springer.com/chapter/10.1007/978-981-95-3489-0_36" target="_blank" rel="noopener">Read the paper</a>
+        </div>
+      </div>
+      <div class="pipeline" role="list" aria-label="How the framework works">
+        <div class="stage" role="listitem" data-stage><code>01</code><div><h3>Detect</h3><p>A multi-agent LLM pass flags weaknesses in the source.</p></div></div>
+        <div class="stage" role="listitem" data-stage><code>02</code><div><h3>Retrieve</h3><p>RAG over MITRE’s Top 25 CWEs grounds each finding.</p></div></div>
+        <div class="stage" role="listitem" data-stage><code>03</code><div><h3>Repair</h3><p>A patch is proposed and checked against the finding.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="now-h">
+    <div class="container split">
+      <div class="section__head" style="margin-bottom:0" data-rise>
+        <h2 id="now-h">At Couchbase</h2>
+        <p>Quality and release engineering for a distributed database. B.E. in Computer Science, Networks and Security, PES University, 2025.</p>
+      </div>
+      <table class="ledger" data-rise>
+        <tbody>
+          <tr><th scope="row">Release readiness</th><td>Gating what ships</td></tr>
+          <tr class="on"><th scope="row">Scale testing</th><td>Distributed clusters under load</td></tr>
+          <tr><th scope="row">Reliability</th><td>Performance and fault tolerance</td></tr>
+          <tr><th scope="row">Languages</th><td>Python, Go, JavaScript, Java, C</td></tr>
+          <tr><th scope="row">Infrastructure</th><td>AWS, Docker, Kubernetes, Jenkins</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="writing" aria-labelledby="writing-h">
+    <div class="container">
+      <div class="section__head" data-rise>
+        <h2 id="writing-h">Writing</h2>
+      </div>
+      <ol class="index">
+        <li><a class="row" href="https://samridh3215.hashnode.dev/guide-to-developing-secure-apis" target="_blank" rel="noopener" data-row>
+          <span class="row__n">01</span><span class="row__t">Guide to developing secure APIs</span>
+          <span class="row__d">Practices and methods for building secure APIs.</span><span class="row__s">February 2023</span>
+        </a></li>
+        <li><a class="row" href="https://samridh3215.hashnode.dev/creating-a-https-connection-with-an-ssl-certificate-for-apache-servers" target="_blank" rel="noopener" data-row>
+          <span class="row__n">02</span><span class="row__t">HTTPS with an SSL certificate</span>
+          <span class="row__d">Setting up HTTPS on an Apache server.</span><span class="row__s">January 2023</span>
+        </a></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="container">
+    <h2 data-rise>Open to opportunities.</h2>
+    <a class="foot__mail" href="mailto:samridhanand.2003@gmail.com">samridhanand.2003@gmail.com</a>
+    <ul class="foot__links">
+      <li><a href="https://github.com/samridh3215" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/samridh-anand-985415241/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="work.html">All projects</a></li>
+    </ul>
+    <p class="foot__legal">© 2026 Samridh Anand. Bangalore, India.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
