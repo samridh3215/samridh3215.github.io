@@ -266,3 +266,18 @@
   if (!p || !('IntersectionObserver' in window)) { p && p.classList.add('in'); return; }
   new IntersectionObserver(([e], io) => { if (e.isIntersecting) { p.classList.add('in'); io.disconnect(); } }, { threshold: 0.4 }).observe(p);
 })();
+
+/* ---- mobile menu ---- */
+(() => {
+  const nav = document.querySelector('.nav'), burger = nav && nav.querySelector('.burger'), menu = document.getElementById('menu');
+  if (!burger || !menu) return;
+  const scrim = document.createElement('div'); scrim.className = 'nav__scrim'; scrim.setAttribute('aria-hidden', 'true'); document.body.append(scrim);
+  const set = (o) => { nav.classList.toggle('is-open', o); burger.setAttribute('aria-expanded', String(o)); burger.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); document.documentElement.classList.toggle('menu-open', o); };
+  burger.addEventListener('click', () => set(!nav.classList.contains('is-open')));
+  scrim.addEventListener('click', () => set(false));
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
+  matchMedia('(min-width: 56.01rem)').addEventListener('change', (e) => { if (e.matches) set(false); });
+  const li = document.createElement('li'); li.className = 'menu__jump'; li.innerHTML = '<button type="button">Jump to...</button>'; menu.append(li);
+  li.firstChild.addEventListener('click', () => { set(false); const k = document.querySelector('.nav__k'); if (k) k.click(); });
+})();
