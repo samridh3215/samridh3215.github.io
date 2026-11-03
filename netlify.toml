@@ -1,5 +1,5 @@
-# Plain static site: no build step, publish the repository root.
-# This file overrides the build command and publish directory set in the Netlify dashboard.
+# Plain static site, no npm or Hugo. The build just copies the site into public/,
+# because Netlify's old Hugo setup expects a "public" publish directory.
 [build]
-  command = "echo 'static site, nothing to build'"
-  publish = "."
+  command = "rm -rf public && mkdir public && cp -r *.html assets icons *.txt *.xml *.pdf public/"
+  publish = "public"
