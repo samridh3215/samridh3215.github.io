@@ -320,3 +320,57 @@ html[data-mode] .pace.in .pace__bar i { transform: scaleX(1); }
   html.menu-open .nav__scrim { opacity: 1; visibility: visible; transition-delay: 0s; }
 }
 @media (min-width: 56.01rem) { .nav__scrim { display: none; } }
+
+/* ---------- two-colour system: indigo + teal gradient, one tangerine pop ---------- */
+body { background: radial-gradient(60rem 40rem at 85% -10%, color-mix(in oklab, var(--color-indigo, var(--color-accent)) 22%, transparent), transparent 70%), radial-gradient(50rem 36rem at -10% 30%, color-mix(in oklab, var(--color-teal, var(--color-accent)) 10%, transparent), transparent 70%), var(--color-paper); background-attachment: fixed; }
+.intro h1::after, .page-title h1::after { content: ""; display: block; width: 3.5rem; height: 4px; margin-top: var(--space-md); border-radius: 2px; background: var(--grad); }
+html[data-mode="off"] .intro h1::after { border-radius: 0; width: 6rem; }
+.progress { background: var(--grad); }
+.key--primary { background: var(--grad); }
+.more::before { background: var(--grad); }
+.chip[aria-pressed="true"] { background: var(--grad); }
+.card--feature, .project--feature { border-image: var(--grad) 1; }
+.card--feature { border-image-slice: 1; }
+/* the pop: rare on purpose */
+::selection { background: var(--color-pop); color: oklch(15% 0.03 50); }
+.badge { border-color: var(--color-pop); color: var(--color-pop); background: color-mix(in oklab, var(--color-pop) 14%, transparent); }
+.term__cmd::after { background: var(--color-pop); }
+.mode__track i { background: var(--color-pop); }
+.job:first-of-type .job__org::after { content: " \25CF  current"; color: var(--color-pop); font: 500 var(--text-xs)/1 var(--font-outlier); }
+@media (prefers-reduced-motion: no-preference) { .badge { animation: pop-pulse 3.2s ease-in-out infinite; } @keyframes pop-pulse { 50% { box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-pop) 22%, transparent); } } }
+
+/* ---------- desktop: intro only gets the wide, off-balance layout ---------- */
+@media (min-width: 64rem) {
+  .intro > .container { max-width: 90vw; padding-inline: 0; }
+  .intro { padding-block: var(--space-4xl) var(--space-3xl); }
+  .intro h1 { font-size: clamp(4.5rem, 10vw, 11rem); line-height: 0.9; letter-spacing: -0.04em; margin-left: -0.04em; }
+  html[data-mode="off"] .intro h1 { font-size: clamp(5rem, 13vw, 15rem); }
+  .intro__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-lg); align-items: end; }
+  .intro__grid > div:first-child { grid-column: 1 / span 8; }
+  .intro__grid > .term { grid-column: 9 / span 4; translate: 0 -3rem; rotate: 1.4deg; }
+  .intro .lead { max-width: 46ch; margin-left: 12%; }
+  .intro .actions { margin-left: 12%; }
+}
+
+/* ---------- typography polish ---------- */
+:root { --text-xs: 0.875rem; --text-sm: 0.9375rem; --text-md: 1.0625rem; }
+:root:not([data-mode="off"]) { --color-ink-2: oklch(84% 0.02 235); --color-muted: oklch(72% 0.028 245); }
+body { line-height: 1.68; font-kerning: normal; font-feature-settings: "kern", "liga"; text-rendering: optimizeLegibility; }
+p:not([class]), .list, .card p:not(.card__tag) { line-height: 1.7; }
+.lead { line-height: 1.55; color: var(--color-ink-2); }
+.list li { margin-bottom: var(--space-sm); }
+h1, h2, h3 { text-wrap: balance; }
+h2 { letter-spacing: -0.02em; line-height: 1.1; }
+h3 { line-height: 1.25; }
+.card__tag, .job__when, .eyebrow { letter-spacing: 0.02em; }
+.num, .stats dd, .ledger td { font-variant-numeric: tabular-nums lining-nums; }
+@media (max-width: 40rem) { body { font-size: 1.0625rem; } .lead { font-size: 1.125rem; } }
+
+/* ---------- larger type in the content sections ---------- */
+.section { font-size: 1.1875rem; }
+.section .list, .section p:not([class]), .section .card p:not(.card__tag), .section .project p, .section .trait p { font-size: 1.1875rem; }
+.section__head h2 { font-size: clamp(2.5rem, 3.5vw + 1rem, 4.25rem); }
+.section h3 { font-size: clamp(1.5rem, 1vw + 1.1rem, 2rem); }
+.card__tag, .section .job__when, .section .job__org, .section .tags, .section dt { font-size: 1rem; }
+.section .job__org { font-size: 1.125rem; }
+@media (min-width: 64rem) { .section { font-size: 1.25rem; } .section .list, .section p:not([class]), .section .card p:not(.card__tag), .section .project p { font-size: 1.25rem; } .section p:not([class]), .section .list { max-width: 72ch; } }
