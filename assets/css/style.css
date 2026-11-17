@@ -351,3 +351,11 @@ html[data-mode] .pace.in .pace__bar i { transform: scaleX(1); }
   .section { font-size: 1.1875rem; }
 }
 @media (max-width: 40rem) { .lead { font-size: 1.125rem; } .term__cmd { bottom: -18px; } }
+
+/* narrow phones: let the underlined phrase wrap, and fall back to a plain pen underline */
+@media (max-width: 24rem) {
+  .mark--under { white-space: normal; text-decoration: underline 2px var(--color-pen); text-underline-offset: 0.2em; }
+  .mark--under > svg { display: none; }
+}
+html[data-mode="off"] .nav__links a[aria-current="page"] { color: var(--color-ink); }
+@media (max-width: 22.5rem) { .mode__l { display: none; } .nav__brand { font-size: 1rem; } }

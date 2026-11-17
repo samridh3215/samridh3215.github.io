@@ -12,9 +12,10 @@
       gsap.from(el, { y: 18, opacity: 0, duration: 0.8, delay: top ? 0.35 : 0, scrollTrigger: top ? null : { trigger: el, start: 'top 90%', once: true } });
     });
     // the name is set letter by letter, like wet ink settling
+    gsap.utils.toArray('[data-ink]').forEach((h) => h.setAttribute('aria-label', h.textContent.replace(/\s+/g, ' ').trim()));
     gsap.utils.toArray('[data-ink] .ln').forEach((ln, i) => {
-      const txt = ln.textContent; ln.setAttribute('aria-label', txt); ln.setAttribute('role', 'text'); ln.textContent = '';
-      [...txt].forEach((c) => { const s = document.createElement('span'); s.className = 'ch'; s.setAttribute('aria-hidden', 'true'); s.textContent = c; ln.append(s); });
+      const txt = ln.textContent; ln.textContent = ''; ln.setAttribute('aria-hidden', 'true');
+      [...txt].forEach((c) => { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c; ln.append(s); });
       gsap.from(ln.children, { yPercent: 40, rotate: () => gsap.utils.random(-8, 8), opacity: 0, filter: 'blur(6px)', duration: 0.9, ease: 'expo.out', stagger: 0.045, delay: 0.1 + i * 0.28, clearProps: 'filter' });
     });
     // the stamp lands once it scrolls in
@@ -43,24 +44,30 @@
   // the review pen: hand-drawn underlines and circles, drawn in as they scroll into view
   const j = (a, k = 3) => +(a + (Math.random() - 0.5) * k).toFixed(1);
   const pens = {
-    under: (w, h) => `M${j(2)} ${j(h * 0.45)} C${w * 0.3} ${j(h * 0.15)} ${w * 0.6} ${j(h * 0.75)} ${j(w - 1)} ${j(h * 0.35)} M${j(w * 0.12)} ${j(h * 0.85)} C${w * 0.45} ${j(h * 0.55)} ${w * 0.7} ${j(h * 0.95)} ${j(w * 0.9)} ${j(h * 0.7)}`,
+    // two strokes, the second a quick return pass
+    under: (w, h) => [`M${j(2)} ${j(h * 0.45)} C${w * 0.3} ${j(h * 0.15)} ${w * 0.6} ${j(h * 0.75)} ${j(w - 1)} ${j(h * 0.35)}`, `M${j(w * 0.12)} ${j(h * 0.85)} C${w * 0.45} ${j(h * 0.55)} ${w * 0.7} ${j(h * 0.95)} ${j(w * 0.9)} ${j(h * 0.7)}`],
     // control points sit outside the box so the loop actually reaches the edges
-    circle: (w, h) => `M${j(w * 0.55, 6)} ${j(h * 0.06)} C${j(w * 1.2)} ${h * 0.04} ${j(w * 1.2)} ${h * 0.98} ${w * 0.5} ${j(h * 0.95)} C${j(w * -0.2)} ${h * 0.94} ${j(w * -0.18)} ${h * 0.02} ${j(w * 0.45)} ${j(h * 0.04)} C${j(w * 0.62)} ${h * 0.03} ${j(w * 0.76)} ${h * 0.08} ${j(w * 0.86)} ${j(h * 0.18)}`,
+    circle: (w, h) => [`M${j(w * 0.55, 6)} ${j(h * 0.06)} C${j(w * 1.2)} ${h * 0.04} ${j(w * 1.2)} ${h * 0.98} ${w * 0.5} ${j(h * 0.95)} C${j(w * -0.2)} ${h * 0.94} ${j(w * -0.18)} ${h * 0.02} ${j(w * 0.45)} ${j(h * 0.04)} C${j(w * 0.62)} ${h * 0.03} ${j(w * 0.76)} ${h * 0.08} ${j(w * 0.86)} ${j(h * 0.18)}`],
   };
-  const drawPens = () => $$('.mark--under, .mark--circle').forEach((el) => {
+  $$('.mark--under, .mark--circle').forEach((el) => {
     const kind = el.classList.contains('mark--circle') ? 'circle' : 'under';
-    el.insertAdjacentHTML('beforeend', '<svg aria-hidden="true"><path/></svg>');
-    const svg = $('svg', el), r = svg.getBoundingClientRect(), w = Math.max(r.width, 10), h = Math.max(r.height, 6);
-    svg.setAttribute('viewBox', `0 0 ${w.toFixed(1)} ${h.toFixed(1)}`); $('path', svg).setAttribute('d', pens[kind](w, h));
-    const path = $('path', el);
-    if (reduce || !('IntersectionObserver' in window)) return;
-    path.setAttribute('pathLength', '1'); path.style.strokeDasharray = '1'; path.style.strokeDashoffset = '1';
-    new IntersectionObserver(([en], io) => { if (!en.isIntersecting) return; io.disconnect();
-      path.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: kind === 'circle' ? 900 : 700, delay: 350, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', fill: 'forwards' });
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('aria-hidden', 'true'); el.append(svg);
+    const animate = !reduce && 'IntersectionObserver' in window;
+    let lastW = 0, inked = !animate;
+    // (re)measure whenever the mark gets a size: after fonts load, after a mode switch reveals it, on resize
+    const build = () => {
+      const r = svg.getBoundingClientRect(); if (!r.width || Math.abs(r.width - lastW) < 1) return; lastW = r.width;
+      svg.setAttribute('viewBox', `0 0 ${r.width.toFixed(1)} ${r.height.toFixed(1)}`);
+      svg.innerHTML = pens[kind](r.width, r.height).map((d) => `<path d="${d}" pathLength="1"/>`).join('');
+      if (!inked) $$('path', svg).forEach((p) => { p.style.strokeDasharray = '1'; p.style.strokeDashoffset = '1'; });
+    };
+    new ResizeObserver(build).observe(svg); // the svg, not the inline span: inline boxes always report 0 to ResizeObserver
+    if (document.fonts) document.fonts.ready.then(() => { lastW = 0; build(); });
+    if (!animate) return;
+    new IntersectionObserver(([en], io) => { if (!en.isIntersecting || !lastW) return; io.disconnect(); inked = true;
+      $$('path', svg).forEach((p, i) => p.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: kind === 'circle' ? 900 : i ? 380 : 620, delay: 350 + i * 560, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', fill: 'forwards' }));
     }, { threshold: 1, rootMargin: '0px 0px -10% 0px' }).observe(el);
   });
-  // measure after the fonts land, so the marks fit the real words
-  (document.fonts ? document.fonts.ready : Promise.resolve()).then(drawPens);
   $$('.mark--hl').forEach((el) => {
     if (reduce || !('IntersectionObserver' in window)) { el.classList.add('is-on'); return; }
     new IntersectionObserver(([en], io) => { if (en.isIntersecting) { el.classList.add('is-on'); io.disconnect(); } }, { threshold: 1 }).observe(el);
