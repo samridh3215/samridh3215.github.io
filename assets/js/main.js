@@ -1,104 +1,6 @@
 (() => {
   'use strict';
-  const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-  /* ---- dot field: a static grid, precomputed once. Dots thin out and bend away from the text;
-         the pointer pushes and lights nearby dots. Redraws only while the pointer is moving. ---- */
-  const canvas = document.getElementById('field');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    const GAP = 22, TEXT_PAD = 14, TEXT_FADE = 80, PUSH = 16, MR = 120;
-    let base = css('--color-glyph-2'), hot = css('--color-accent-2');
-    let streak = document.documentElement.dataset.mode === 'off';
-    const host = canvas.parentElement;
-    let n = 0, ox, oy, sc, W = 0, H = 0, raf = 0;
-    const m = { x: -9999, y: -9999, tx: -9999, ty: -9999 };
-
-    const textRects = (box) => {
-      const out = [];
-      host.querySelectorAll('h1, .eyebrow, .lead, .actions, .facts').forEach((el) => {
-        let r;
-        if (el.matches('h1, .eyebrow, .lead')) { const g = document.createRange(); g.selectNodeContents(el); r = g.getBoundingClientRect(); }
-        else r = el.getBoundingClientRect();
-        if (r.width) out.push({ l: r.left - box.left - TEXT_PAD, r: r.right - box.left + TEXT_PAD, t: r.top - box.top - TEXT_PAD, b: r.bottom - box.top + TEXT_PAD });
-      });
-      return out;
-    };
-
-    const layout = () => {
-      const box = canvas.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = box.width; H = box.height;
-      canvas.width = W * dpr; canvas.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const cols = Math.ceil(W / GAP) + 1, rows = Math.ceil(H / GAP) + 1;
-      n = cols * rows; ox = new Float32Array(n); oy = new Float32Array(n); sc = new Float32Array(n);
-      const rects = textRects(box);
-      let k = 0;
-      for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++, k++) {
-        let x = i * GAP, y = j * GAP, s = 1;
-        for (const q of rects) {
-          const dx = Math.max(q.l - x, 0, x - q.r), dy = Math.max(q.t - y, 0, y - q.b);
-          const d = Math.hypot(dx, dy);
-          if (d >= TEXT_FADE) continue;
-          const f = d / TEXT_FADE, push = (1 - f) * (1 - f) * 20;
-          let nx = dx ? Math.sign(x - (x < q.l ? q.l : q.r)) : 0, ny = dy ? Math.sign(y - (y < q.t ? q.t : q.b)) : 0;
-          if (!nx && !ny) { nx = x < (q.l + q.r) / 2 ? -1 : 1; ny = 0; }
-          const len = Math.hypot(nx * Math.max(dx, 1), ny * Math.max(dy, 1)) || 1;
-          x += (nx * Math.max(dx, 1) / len) * push; y += (ny * Math.max(dy, 1) / len) * push;
-          s = Math.min(s, f * f);
-        }
-        ox[k] = x; oy[k] = y; sc[k] = s;
-      }
-    };
-
-    const draw = () => {
-      ctx.clearRect(0, 0, W, H);
-      const lit = [];
-      ctx.fillStyle = base; ctx.globalAlpha = 0.55; ctx.beginPath();
-      for (let k = 0; k < n; k++) {
-        const s = sc[k]; if (s < 0.12) continue;
-        let x = ox[k], y = oy[k], r = 1.5 * s;
-        const dx = x - m.x, dy = y - m.y, d2 = dx * dx + dy * dy;
-        if (d2 < MR * MR) {
-          const d = Math.sqrt(d2), f = 1 - d / MR, p = f * f * PUSH;
-          x += (dx / (d || 1)) * p; y += (dy / (d || 1)) * p;
-          lit.push(x, y, (1.5 + f * 2.2) * Math.max(s, 0.4)); continue;
-        }
-        if (streak) { const hl = (3 + 10 * (x / W)) * s; ctx.rect(x - hl, y - 1, hl * 2, 2); } else { ctx.moveTo(x + r, y); ctx.arc(x, y, r, 0, 6.2832); }
-      }
-      ctx.fill();
-      if (lit.length) {
-        ctx.fillStyle = hot; ctx.globalAlpha = 0.95; ctx.beginPath();
-        for (let i = 0; i < lit.length; i += 3) { if (streak) { const hl = lit[i + 2] * 3.2; ctx.rect(lit[i] - hl, lit[i + 1] - 1.25, hl * 2, 2.5); } else { ctx.moveTo(lit[i] + lit[i + 2], lit[i + 1]); ctx.arc(lit[i], lit[i + 1], lit[i + 2], 0, 6.2832); } }
-        ctx.fill();
-      }
-    };
-
-    const tick = () => {
-      m.x += (m.tx - m.x) * 0.22; m.y += (m.ty - m.y) * 0.22;
-      draw();
-      raf = (Math.abs(m.tx - m.x) > 0.4 || Math.abs(m.ty - m.y) > 0.4) ? requestAnimationFrame(tick) : 0;
-    };
-    const kick = () => { if (!raf) raf = requestAnimationFrame(tick); };
-
-    let to = 0;
-    const relayout = () => { clearTimeout(to); to = setTimeout(() => { layout(); draw(); }, 80); };
-    layout(); draw();
-    new ResizeObserver(relayout).observe(host);
-    if (document.fonts) document.fonts.ready.then(() => { layout(); draw(); });
-    addEventListener('field:relayout', () => requestAnimationFrame(() => { base = css('--color-glyph-2'); hot = css('--color-accent-2'); streak = document.documentElement.dataset.mode === 'off'; layout(); draw(); }));
-
-    if (!reduce.matches) {
-      host.addEventListener('pointermove', (e) => {
-        const r = canvas.getBoundingClientRect();
-        if (m.tx < -999) { m.x = e.clientX - r.left; m.y = e.clientY - r.top; }
-        m.tx = e.clientX - r.left; m.ty = e.clientY - r.top; kick();
-      }, { passive: true });
-      host.addEventListener('pointerleave', () => { m.tx = m.ty = -9999; m.x = m.y = -9999; draw(); });
-    }
-  }
 
   if (!window.gsap) return;
   gsap.registerPlugin(window.ScrollTrigger);
@@ -107,7 +9,22 @@
   gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
     gsap.utils.toArray('[data-rise]').forEach((el) => {
       const top = el.getBoundingClientRect().top < window.innerHeight;
-      gsap.from(el, { y: 16, opacity: 0, delay: top ? 0.05 : 0, scrollTrigger: top ? null : { trigger: el, start: 'top 90%', once: true } });
+      gsap.from(el, { y: 18, opacity: 0, duration: 0.8, delay: top ? 0.35 : 0, scrollTrigger: top ? null : { trigger: el, start: 'top 90%', once: true } });
+    });
+    // the name is set letter by letter, like wet ink settling
+    gsap.utils.toArray('[data-ink]').forEach((h) => h.setAttribute('aria-label', h.textContent.replace(/\s+/g, ' ').trim()));
+    gsap.utils.toArray('[data-ink] .ln').forEach((ln, i) => {
+      const txt = ln.textContent; ln.textContent = ''; ln.setAttribute('aria-hidden', 'true');
+      [...txt].forEach((c) => { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c; ln.append(s); });
+      gsap.from(ln.children, { yPercent: 40, rotate: () => gsap.utils.random(-8, 8), opacity: 0, filter: 'blur(6px)', duration: 0.9, ease: 'expo.out', stagger: 0.045, delay: 0.1 + i * 0.28, clearProps: 'filter' });
+    });
+    // the stamp lands once it scrolls in
+    gsap.utils.toArray('.badge').forEach((el) => {
+      const host = el.closest('.card, .project') || el;
+      gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 85%', once: true } })
+        .from(el, { scale: 2.4, opacity: 0, rotate: -18, duration: 0.32, ease: 'power4.in' })
+        .to(host, { x: 2, duration: 0.05, yoyo: true, repeat: 3, ease: 'none' })
+        .set(host, { x: 0 });
     });
   });
 })();
@@ -124,11 +41,37 @@
   const prog = () => { tick = 0; const h = document.documentElement; const max = h.scrollHeight - h.clientHeight; bar.style.transform = `scaleX(${max > 0 ? h.scrollTop / max : 0})`; };
   addEventListener('scroll', () => { if (!tick) tick = requestAnimationFrame(prog); }, { passive: true }); prog();
 
-  // card spotlight
-  document.addEventListener('pointermove', (e) => {
-    const c = e.target.closest && e.target.closest('.card'); if (!c) return;
-    const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  }, { passive: true });
+  // the review pen: hand-drawn underlines and circles, drawn in as they scroll into view
+  const j = (a, k = 3) => +(a + (Math.random() - 0.5) * k).toFixed(1);
+  const pens = {
+    // two strokes, the second a quick return pass
+    under: (w, h) => [`M${j(2)} ${j(h * 0.45)} C${w * 0.3} ${j(h * 0.15)} ${w * 0.6} ${j(h * 0.75)} ${j(w - 1)} ${j(h * 0.35)}`, `M${j(w * 0.12)} ${j(h * 0.85)} C${w * 0.45} ${j(h * 0.55)} ${w * 0.7} ${j(h * 0.95)} ${j(w * 0.9)} ${j(h * 0.7)}`],
+    // control points sit outside the box so the loop actually reaches the edges
+    circle: (w, h) => [`M${j(w * 0.55, 6)} ${j(h * 0.06)} C${j(w * 1.2)} ${h * 0.04} ${j(w * 1.2)} ${h * 0.98} ${w * 0.5} ${j(h * 0.95)} C${j(w * -0.2)} ${h * 0.94} ${j(w * -0.18)} ${h * 0.02} ${j(w * 0.45)} ${j(h * 0.04)} C${j(w * 0.62)} ${h * 0.03} ${j(w * 0.76)} ${h * 0.08} ${j(w * 0.86)} ${j(h * 0.18)}`],
+  };
+  $$('.mark--under, .mark--circle').forEach((el) => {
+    const kind = el.classList.contains('mark--circle') ? 'circle' : 'under';
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('aria-hidden', 'true'); el.append(svg);
+    const animate = !reduce && 'IntersectionObserver' in window;
+    let lastW = 0, inked = !animate;
+    // (re)measure whenever the mark gets a size: after fonts load, after a mode switch reveals it, on resize
+    const build = () => {
+      const r = svg.getBoundingClientRect(); if (!r.width || Math.abs(r.width - lastW) < 1) return; lastW = r.width;
+      svg.setAttribute('viewBox', `0 0 ${r.width.toFixed(1)} ${r.height.toFixed(1)}`);
+      svg.innerHTML = pens[kind](r.width, r.height).map((d) => `<path d="${d}" pathLength="1"/>`).join('');
+      if (!inked) $$('path', svg).forEach((p) => { p.style.strokeDasharray = '1'; p.style.strokeDashoffset = '1'; });
+    };
+    new ResizeObserver(build).observe(svg); // the svg, not the inline span: inline boxes always report 0 to ResizeObserver
+    if (document.fonts) document.fonts.ready.then(() => { lastW = 0; build(); });
+    if (!animate) return;
+    new IntersectionObserver(([en], io) => { if (!en.isIntersecting || !lastW) return; io.disconnect(); inked = true;
+      $$('path', svg).forEach((p, i) => p.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: kind === 'circle' ? 900 : i ? 380 : 620, delay: 350 + i * 560, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', fill: 'forwards' }));
+    }, { threshold: 1, rootMargin: '0px 0px -10% 0px' }).observe(el);
+  });
+  $$('.mark--hl').forEach((el) => {
+    if (reduce || !('IntersectionObserver' in window)) { el.classList.add('is-on'); return; }
+    new IntersectionObserver(([en], io) => { if (en.isIntersecting) { el.classList.add('is-on'); io.disconnect(); } }, { threshold: 1 }).observe(el);
+  });
 
   // project filters
   const projects = $$('.project[data-cat]');
@@ -213,7 +156,7 @@
   const setMode = (m) => {
     html.dataset.mode = m; sw.setAttribute('aria-checked', String(m === 'off'));
     say.textContent = m === 'off' ? 'Showing life outside work' : 'Showing work';
-    window.scrollTo(0, 0); dispatchEvent(new Event('field:relayout')); if (window.ScrollTrigger) ScrollTrigger.refresh();
+    window.scrollTo(0, 0); if (window.ScrollTrigger) ScrollTrigger.refresh();
     if (window.gsap && !reduce) requestAnimationFrame(() => gsap.from($$('.term .facts > div').filter((e) => e.offsetParent), { opacity: 0, x: -10, stagger: 0.15, delay: 0.5, duration: 0.5 }));
   };
   sw.setAttribute('aria-checked', String(html.dataset.mode === 'off'));

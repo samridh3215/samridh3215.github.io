@@ -1,66 +1,59 @@
+/* A reviewed notebook: warm stock, blue-black fountain ink, one red review pen.
+   Off the clock swaps the pen for a training-log highlighter on graph paper. */
 :root {
   color-scheme: light;
   --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
-  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
-  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
-  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --text-xs: 0.875rem; --text-sm: 0.9375rem; --text-md: 1.0625rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.5rem, 4vw + 0.75rem, 4.25rem);
+  --text-section: clamp(2.25rem, 3vw + 1rem, 3.75rem); --text-title: clamp(1.375rem, 0.8vw + 1rem, 1.75rem); --text-lead: clamp(1.1875rem, 0.4vw + 1.05rem, 1.4375rem);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1); --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
-  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
-  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
-  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
-  --color-paper: oklch(98.6% 0.005 250); --color-paper-2: oklch(96.2% 0.008 252); --color-paper-3: oklch(93% 0.011 252);
-  --color-ink: oklch(21% 0.028 262); --color-ink-2: oklch(36% 0.022 260); --color-muted: oklch(50% 0.018 258);
-  --color-rule: oklch(90% 0.009 252); --color-rule-2: oklch(83% 0.012 252);
-  --color-graphite: oklch(21% 0.024 262); --color-graphite-2: oklch(26.5% 0.026 262); --color-graphite-ink: oklch(93% 0.010 250); --color-graphite-muted: oklch(69% 0.022 256);
-  --color-accent: oklch(52% 0.19 258); --color-accent-2: oklch(76% 0.13 254); --color-accent-wash: oklch(95% 0.028 256); --color-accent-ink: oklch(98.6% 0.005 250); --color-focus: oklch(52% 0.19 258);
-  --color-accent-deep: oklch(43% 0.2 262); --color-accent-edge: oklch(39% 0.16 260);
-  --color-glyph-1: oklch(89% 0.025 254); --color-glyph-2: oklch(81% 0.045 255); --color-glyph-3: oklch(70% 0.085 256); --color-glyph-4: oklch(60% 0.13 257);
-  --color-graphite-glyph-1: oklch(33% 0.03 262); --color-graphite-glyph-2: oklch(41% 0.05 260); --color-graphite-glyph-3: oklch(53% 0.1 258);
-  --color-key-face: oklch(99.4% 0.003 250); --color-key-edge: oklch(80% 0.016 254);
-  --font-display: "Familjen Grotesk", system-ui, sans-serif; --font-body: "IBM Plex Sans", system-ui, sans-serif;
-  --font-outlier: "JetBrains Mono", ui-monospace, monospace;
-  --radius-card: 8px; --radius-input: 6px; --radius-pill: 999px;
-  --cell-w: 8px; --cell-h: 16px; --cut: 8px; --cut-l: 16px;
-  --rule-hair: 1px; --shadow-card: 0 1px 2px oklch(21% 0.028 262 / 0.06);
-  --shadow-key: 0 3px 0 0 var(--color-key-edge), 0 6px 8px -4px oklch(21% 0.028 262 / 0.28), inset 0 1px 0 oklch(100% 0 0 / 0.9);
-  --shadow-key-accent: 0 3px 0 0 var(--color-accent-edge), 0 6px 8px -4px oklch(30% 0.12 260 / 0.45), inset 0 1px 0 oklch(100% 0 0 / 0.22);
-  --shadow-key-press: inset 0 1px 2px oklch(21% 0.028 262 / 0.14);
-  --tracking-display: -0.028em; --display-weight: 600;
+  --container: 1280px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 112px;
+  --z-raised: 10; --z-sticky-nav: 300; --z-modal: 400;
+
+  /* stock */
+  --color-paper: oklch(96.4% 0.016 84);        /* the page */
+  --color-sheet: oklch(98.8% 0.007 88);        /* a loose sheet laid on the page */
+  --color-paper-2: oklch(93.6% 0.02 82);       /* pressed-in: inputs, insets */
+  --color-paper-3: oklch(90% 0.024 80);
+  --color-rule: oklch(87% 0.022 80);           /* pencil ruling */
+  --color-rule-2: oklch(78% 0.026 78);
+  --color-ruling-blue: oklch(80% 0.05 240);    /* index-card lines */
+
+  /* ink */
+  --color-ink: oklch(24% 0.04 266);            /* blue-black fountain ink */
+  --color-ink-2: oklch(36% 0.035 262);
+  --color-muted: oklch(48% 0.022 255);         /* graphite */
+
+  /* the review pen */
+  --color-pen: oklch(51% 0.19 28);
+  --color-pen-wash: oklch(93% 0.035 40);
+  --color-highlight: oklch(92% 0.13 100);      /* yellow highlighter, selection only */
+
+  --color-accent: var(--color-pen); --color-accent-wash: var(--color-pen-wash); --color-accent-ink: var(--color-sheet); --color-focus: var(--color-pen);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Fraunces", Georgia, serif;
+  --font-type: "Courier Prime", "Courier New", ui-monospace, monospace;   /* the typewriter */
+  --font-hand: "Kalam", "Segoe Print", cursive;                          /* margin notes */
+  --font-outlier: var(--font-type);
+
+  --radius-card: 2px; --radius-input: 2px;
+  --rule-hair: 1px;
+  --shadow-sheet: 0 1px 1px oklch(30% 0.03 70 / 0.08), 0 2px 6px -2px oklch(30% 0.03 70 / 0.12);
+  --shadow-sheet-lift: 0 2px 2px oklch(30% 0.03 70 / 0.08), 0 14px 28px -12px oklch(30% 0.03 70 / 0.28);
+  --tracking-display: -0.022em; --display-weight: 480;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .18 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ---------- dark theme: deep indigo + teal (90%), one tangerine pop ---------- */
-:root {
-  color-scheme: dark;
-  --color-paper: oklch(16.5% 0.035 275); --color-paper-2: oklch(20.5% 0.04 273); --color-paper-3: oklch(25% 0.045 270);
-  --color-ink: oklch(95% 0.012 220); --color-ink-2: oklch(80% 0.02 235); --color-muted: oklch(66% 0.028 245);
-  --color-rule: oklch(27% 0.035 272); --color-rule-2: oklch(37% 0.04 262);
-  --color-accent: oklch(78% 0.125 190); --color-accent-2: oklch(84% 0.11 195); --color-accent-wash: oklch(24% 0.055 215);
-  --color-accent-ink: oklch(15% 0.035 270); --color-focus: oklch(84% 0.11 195);
-  --color-accent-deep: oklch(84% 0.1 195); --color-accent-edge: oklch(50% 0.1 200);
-  --color-indigo: oklch(52% 0.19 280); --color-teal: oklch(78% 0.125 190);
-  --grad: linear-gradient(110deg, oklch(66% 0.2 285), oklch(76% 0.13 215) 55%, oklch(82% 0.12 185));
-  --color-pop: oklch(74% 0.19 48);
-  --color-glyph-1: oklch(32% 0.04 275); --color-glyph-2: oklch(42% 0.07 250); --color-glyph-3: oklch(58% 0.1 215); --color-glyph-4: oklch(76% 0.125 190);
-  --color-key-face: oklch(25% 0.04 273); --color-key-edge: oklch(11% 0.03 272);
-  --shadow-card: 0 1px 2px oklch(0% 0 0 / 0.4);
-  --shadow-key: 0 3px 0 0 var(--color-key-edge), 0 6px 8px -4px oklch(0% 0 0 / 0.5), inset 0 1px 0 oklch(100% 0 0 / 0.07);
-  --shadow-key-accent: 0 3px 0 0 var(--color-accent-edge), 0 6px 8px -4px oklch(0% 0 0 / 0.5), inset 0 1px 0 oklch(100% 0 0 / 0.25);
-  --shadow-key-press: inset 0 1px 2px oklch(0% 0 0 / 0.4);
-}
-
-/* ---------- off the clock: athlete palette (volt on near-black) ---------- */
+/* ---------- off the clock: training log on graph paper, orange highlighter ---------- */
 :root[data-mode="off"] {
-  --font-display: "Barlow Condensed", "Familjen Grotesk", system-ui, sans-serif;
-  --tracking-display: 0.005em; --display-weight: 700;
-  --radius-card: 0; --radius-input: 0; --radius-pill: 0;
-  --color-paper: oklch(14.5% 0.006 270); --color-paper-2: oklch(19% 0.008 270); --color-paper-3: oklch(23.5% 0.01 270);
-  --color-ink: oklch(96% 0.005 100); --color-ink-2: oklch(80% 0.01 100); --color-muted: oklch(65% 0.012 100);
-  --color-rule: oklch(26% 0.01 270); --color-rule-2: oklch(38% 0.014 270);
-  --color-accent: oklch(89% 0.2 122); --color-accent-2: oklch(93% 0.17 118); --color-accent-wash: oklch(26% 0.07 122);
-  --color-accent-ink: oklch(15% 0.03 122); --color-focus: oklch(93% 0.17 118);
-  --color-accent-deep: oklch(92% 0.15 120); --color-accent-edge: oklch(62% 0.16 122);
-  --color-glyph-1: oklch(30% 0.04 122); --color-glyph-2: oklch(42% 0.08 122); --color-glyph-3: oklch(60% 0.13 122); --color-glyph-4: oklch(80% 0.17 122);
-  --color-key-face: oklch(21% 0.01 270); --color-key-edge: oklch(8% 0.01 270);
-  --grad: linear-gradient(110deg, oklch(89% 0.2 122), oklch(80% 0.17 150)); --color-pop: oklch(68% 0.25 350);
+  --color-paper: oklch(96.8% 0.008 95);
+  --color-rule: oklch(86% 0.03 235); --color-rule-2: oklch(74% 0.04 235);
+  --color-ink: oklch(20% 0.01 260); --color-ink-2: oklch(32% 0.012 260); --color-muted: oklch(45% 0.015 255);
+  --color-pen: oklch(70% 0.19 52);             /* highlighter orange: fills only, never small text */
+  --color-pen-wash: oklch(91% 0.07 60);
+  --color-accent-ink: var(--color-ink);
+  --color-focus: var(--color-ink);
+  --tracking-display: -0.01em; --display-weight: 860;
 }
