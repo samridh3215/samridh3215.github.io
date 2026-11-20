@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Source for assets/img/og-image.png (the social link preview card).
+     Regenerate: node tools/render-og.js -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Share card</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Courier+Prime:wght@400;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: oklch(96.4% 0.016 84); --sheet: oklch(98.8% 0.007 88);
+    --rule: oklch(87% 0.022 80); --ruling-blue: oklch(80% 0.05 240);
+    --ink: oklch(24% 0.04 266); --ink-2: oklch(36% 0.035 262); --muted: oklch(48% 0.022 255);
+    --pen: oklch(51% 0.19 28);
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative; background: var(--paper); color: var(--ink);
+    font-family: "Fraunces", Georgia, serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .18 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .left { position: absolute; left: 80px; top: 74px; width: 640px; }
+  .eyebrow { display: flex; align-items: center; gap: 16px; font: 400 21px/1 "Courier Prime", monospace; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; }
+  .eyebrow::before { content: ""; width: 40px; height: 2px; background: var(--pen); }
+  h1 { margin-top: 30px; font-weight: 480; font-size: 142px; line-height: .9; letter-spacing: -0.022em; font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0; }
+  h1 em { display: block; padding-left: 110px; font-weight: 380; color: var(--ink-2); font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1; }
+  .lede { margin-top: 38px; padding-left: 110px; font-size: 31px; line-height: 1.3; color: var(--ink-2); font-variation-settings: "opsz" 30; }
+  .lede .u { position: relative; white-space: nowrap; }
+  .lede .u svg { position: absolute; left: -4px; right: -4px; bottom: -12px; width: calc(100% + 8px); height: 16px; overflow: visible; }
+  .url { position: absolute; left: 80px; bottom: 54px; font: 700 22px/1 "Courier Prime", monospace; letter-spacing: .04em; color: var(--ink); }
+  .url span { color: var(--pen); }
+
+  .card {
+    position: absolute; right: 70px; top: 150px; width: 380px; padding: 0 0 18px;
+    background: var(--sheet); transform: rotate(2.2deg);
+    box-shadow: 0 2px 2px oklch(30% 0.03 70 / 0.08), 0 18px 34px -14px oklch(30% 0.03 70 / 0.32);
+  }
+  .card__head { display: flex; justify-content: space-between; padding: 22px 24px 14px; border-bottom: 2px solid var(--pen); font: 700 15px/1 "Courier Prime", monospace; letter-spacing: .14em; text-transform: uppercase; }
+  .card__head span:last-child { font-weight: 400; color: var(--muted); }
+  .row { display: grid; grid-template-columns: 112px 1fr; gap: 12px; margin: 0 22px; padding: 14px 2px; border-bottom: 1.5px solid var(--ruling-blue); }
+  .row:last-of-type { border-bottom: 0; }
+  .row dt { font: 400 14px/1.5 "Courier Prime", monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .row dd { font-size: 19px; line-height: 1.3; color: var(--ink); }
+  .stamp { position: absolute; right: 26px; bottom: -42px; font: 700 26px/1 "Kalam", cursive; color: var(--pen); transform: rotate(-5deg); }
+</style>
+</head>
+<body>
+  <div class="left">
+    <p class="eyebrow">Software engineer · Bangalore</p>
+    <h1>Samridh<em>Anand</em></h1>
+    <p class="lede"><span class="u">Distributed systems<svg viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9C80 4 190 5 298 7" fill="none" stroke="oklch(51% 0.19 28)" stroke-width="3" stroke-linecap="round"/><path d="M30 14C110 10 200 11 270 12" fill="none" stroke="oklch(51% 0.19 28)" stroke-width="2.2" stroke-linecap="round"/></svg></span>,<br>backend and security.</p>
+  </div>
+  <p class="url">samridh3215.github.io<span>/</span></p>
+
+  <dl class="card">
+    <div class="card__head"><span>Index card · whoami</span><span>No. 0001</span></div>
+    <div class="row"><dt>Now</dt><dd>Quality &amp; release engineering, Couchbase</dd></div>
+    <div class="row"><dt>Published</dt><dd>ICCCT 2025, Springer</dd></div>
+    <div class="row"><dt>Builds</dt><dd>LLM developer tooling, MCP</dd></div>
+    <span class="stamp">verified ✓</span>
+  </dl>
+</body>
+</html>
