@@ -112,6 +112,9 @@ h2[data-idx]::before { content: "No. " attr(data-idx); display: block; margin-bo
 .fig img { background: var(--color-sheet); box-shadow: var(--shadow-sheet); padding: var(--space-sm); max-width: min(100%, 760px); height: auto; }
 .fig--svg { justify-items: stretch; }
 .fig--wide { margin-left: 0; }
+.fig--phones { grid-template-columns: repeat(2, minmax(0, 260px)); }
+.fig--phones figcaption { grid-column: 1 / -1; }
+.fig--phones img { max-width: 100%; }
 .fig__scroll { overflow-x: auto; background: var(--color-sheet); box-shadow: var(--shadow-sheet); padding: var(--space-md); }
 .arch { width: 100%; min-width: 720px; height: auto; }
 .arch rect { fill: var(--color-sheet); stroke: var(--color-ink-2); stroke-width: 1.2; }
@@ -359,3 +362,5 @@ html[data-mode] .pace.in .pace__bar i { transform: scaleX(1); }
 }
 html[data-mode="off"] .nav__links a[aria-current="page"] { color: var(--color-ink); }
 @media (max-width: 22.5rem) { .mode__l { display: none; } .nav__brand { font-size: 1rem; } }
+
+.prose ul { margin: 0; padding-left: 1.2rem; display: grid; gap: var(--space-sm); }

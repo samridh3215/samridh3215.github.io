@@ -18,6 +18,7 @@ Strava: https://www.strava.com/athletes/23573279
 
 ## Projects
 - [universalMods](https://samridh3215.github.io/projects.html#universalmods): A moddable local floor for running a team of Codex and Claude Code agents. (Node.js, TypeScript, React, MCP, Codex, Claude Code)
+- [MacroSnap](https://samridh3215.github.io/projects.html#macrosnap): Photo-to-macros tracker where deterministic checks verify AI nutrition numbers and targets adapt to real metabolism. (Node.js, TypeScript, PWA, LLM, SQLite)
 - [GenieTest](https://samridh3215.github.io/projects.html#genietest): Generates functional tests from RAG over a team's own tests and helper functions. (MCP, RAG, Cursor, Snowflake Arctic, OpenAI Batch API, Python)
 - [GOSniff](https://samridh3215.github.io/projects.html#gosniff): A packet analyzer in Go that streams live captures to a browser. (Go, WebSocket, Networking)
 - [Early Speed Breaker Detection](https://samridh3215.github.io/projects.html#speedbreaker): Crowdsourced accelerometer data and an RNN warn drivers of hazards ahead. (TensorFlow, RNN, Django, IoT)
